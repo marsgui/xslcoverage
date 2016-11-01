@@ -7,13 +7,13 @@ class TraceSaxon:
     Extend the default saxon script to have:
     - Catalog resolver (xml-resolver required)
     - XInclude support (xercesImpl required)
-    - Tracing of data to compute coverage (xmlcover required)
+    - Tracing of data to compute coverage (xslcover required)
     """
     classpath = ":".join(["/usr/share/java/saxon.jar",
                           "/usr/share/java/xml-resolver.jar",
                           "/etc/xml/resolver",
                           "/home/ben/manip/saxon/xerces-2_11_0/xercesImpl.jar",
-                          "/home/ben/manip/saxon/dbcover.jar"])
+                          "/home/ben/manip/saxon/xslcover.jar"])
 
     cmd = ["java", "-classpath", classpath,
            "-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration",
