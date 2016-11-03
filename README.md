@@ -13,7 +13,7 @@ compute the XSL Coverage of your XSL stylesheets.
    outputs some trace files that can be processed on the fly to compute the
    coverage, or that can be processed later.
 
-      `$ python runcover.py file.xml stylesheet.xsl
+      `$ python runcover.py [saxon options] file.xml stylesheet.xsl
       ...`
 
 3. To compute the coverage, call xmlcover on the tracelog file built by
