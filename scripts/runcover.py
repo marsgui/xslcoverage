@@ -3,29 +3,83 @@ import os
 import glob
 import xml.etree.ElementTree as ET
 import hashlib
+from datetime import datetime
 from subprocess import Popen
 from argparse import ArgumentParser
 from xmlcover import CoverAnalyzer, TraceLog
+from saxon_xslt2 import TraceSaxon
 
-class TraceDblatex:
-    def __init__(self, dblatex="dblatex"):
-        self.dblatex = dblatex
-        self.cmd = []
+class CoverageRunner:
+    def __init__(self, snapshot=True, trace_dir="", command=None,
+                       write_report=False):
+        self.command = command
+        self.trace_dir = trace_dir
+        self.snapshot = True
+        self.tracelog = None
+        self.cover_report = None
+        self.write_report = write_report
 
-    def run(self, args, trace_dir=""):
-        cmd = [self.dblatex, "-T", "xsltcover"]
-        cmd += args
-        self.cmd = cmd
-        if trace_dir:
-            env = {}
-            env.update(os.environ)
-            env.update({ "TRACE_DIRECTORY": trace_dir })
+    def _prepare_tracedir(self):
+        if (self.snapshot):
+            now = datetime.now()
+            snapdir = now.strftime("%y%j%H%M%S")
+            self.trace_dir = os.path.join(self.trace_dir, snapdir)
+            os.mkdir(self.trace_dir)
+            self._old_files = []
         else:
-            env = None
+            self._old_files = glob.glob(os.path.join(self.trace_dir, "*"))
+ 
+    def _write_tracelog(self):
+        # Find out the files newly written
+        trace_files = glob.glob(os.path.join(self.trace_dir, "*.xml"))
+        for old_file in self._old_files:
+            if old_file in trace_files:
+                trace_files.remove(old_file)
 
-        p = Popen(cmd, env=env)
-        rc = p.wait()
-        return rc
+        tracelog = TraceLog()
+        tracelog.set_command(" ".join(self.command.cmd))
+        for trace_file in trace_files:
+            tracelog.add_trace(trace_file)
+
+        stylesheets = []
+        for trace_file in trace_files:
+            tree = ET.parse(trace_file)
+            root = tree.getroot()
+            for item in root.iter("stylesheet"):
+                stylesheet = item.get("file").replace("file:", "")
+                if (stylesheet in stylesheets):
+                    continue
+                try:
+                    stylesheets.append(stylesheet)
+                    md5sum = hashlib.md5(open(stylesheet).read()).hexdigest()
+                    tracelog.add_stylesheet(stylesheet, md5sum)
+                except IOError, e:
+                    pass
+
+        tracelog.write(create_filename(self.trace_dir, "tracelog.xml"))
+        print "Write Trace log '%s'" % (tracelog.filename)
+        self.tracelog = tracelog
+
+    def build_coverage_report(self, html_dir="", print_stats=False):
+        cover = CoverAnalyzer()
+        cover.fromlog(self.tracelog)
+        if print_stats:
+            cover.print_stats()
+        if not(html_dir):
+            html_dir = self.trace_dir
+        cover.write_html(output_dir=html_dir)
+        self.cover_report = cover
+
+    def run(self, args):
+        if not(self.command):
+            return
+        self._prepare_tracedir()
+        self.command.run(args, trace_dir=self.trace_dir)
+        self._write_tracelog()
+
+        if self.write_report:
+            self.build_coverage_report()
+
 
 def create_filename(dirname, basename, max_files=1000, try_basename=True):
     if try_basename:
@@ -42,45 +96,19 @@ def create_filename(dirname, basename, max_files=1000, try_basename=True):
             break
     return filename_candidate
 
-def build_coverage_report(tracelog, html_dir, print_stats=False):
-    cover = CoverAnalyzer()
-    cover.fromlog(tracelog)
-    if print_stats:
-        cover.print_stats()
-    cover.write_html(output_dir=html_dir)
 
-def build_tracelog(cmd, trace_dir, old_files):
-    # Find out the files newly written
-    trace_files = glob.glob(os.path.join(trace_dir, "*.xml"))
-    for old_file in old_files:
-        if old_file in trace_files:
-            trace_files.remove(old_file)
+def cmdline(command, parser=None, description='Run XSLT script with traces'):
+    import os
+    import sys
 
-    tracelog = TraceLog()
-    tracelog.set_command(" ".join(cmd))
-    for trace_file in trace_files:
-        tracelog.add_trace(trace_file)
+    parser = cmdline_parser(parser=parser, description=description)
+    options, remain_args = parser.parse_known_args()
+    cmdline_runargs(command, options, remain_args)
 
-    stylesheets = []
-    for trace_file in trace_files:
-        tree = ET.parse(trace_file)
-        root = tree.getroot()
-        for item in root.iter("stylesheet"):
-            stylesheet = item.get("file").replace("file:", "")
-            if (stylesheet in stylesheets):
-                continue
-            try:
-                stylesheets.append(stylesheet)
-                md5sum = hashlib.md5(open(stylesheet).read()).hexdigest()
-                tracelog.add_stylesheet(stylesheet, md5sum)
-            except IOError, e:
-                pass
 
-    tracelog.write(create_filename(trace_dir, "tracelog.xml"))
-    return tracelog
-
-def cmdline_parser(description='Run script and handle traces'):
-    parser = ArgumentParser(description=description)
+def cmdline_parser(parser=None, description=""):
+    if not(parser):
+        parser = ArgumentParser(description=description)
     parser.add_argument("--trace-dir",
           help="Directory containing the traces")
     parser.add_argument("--no-snapshot", action="store_false", dest="snapshot",
@@ -91,40 +119,23 @@ def cmdline_parser(description='Run script and handle traces'):
     return parser
 
 
-def main():
-    import os
-    import sys
-    from datetime import datetime
-
-    parser = cmdline_parser(description='Run dblatex with traces')
-    parser.add_argument("--script", help="Script to call")
-    options, remain_args =  parser.parse_known_args()
-
-    if not(options.script):
-        options.script = "dblatex"
-
+def cmdline_runargs(command, options, args):
     if not(options.trace_dir):
         options.trace_dir = os.getcwd()
     else:
         options.trace_dir = os.path.abspath(options.trace_dir)
 
-    if (options.snapshot):
-        now = datetime.now()
-        snapdir = now.strftime("%y%j%H%M%S")
-        options.trace_dir = os.path.join(options.trace_dir, snapdir)
-        os.mkdir(options.trace_dir)
-        old_files = []
-    else:
-        old_files = glob.glob(os.path.join(options.trace_dir, "*"))
-    
-    s = TraceDblatex(options.script)
-    s.run(remain_args, options.trace_dir)
-    tracelog = build_tracelog(s.cmd, options.trace_dir, old_files)
-    print "Write Trace log '%s'" % (tracelog.filename)
+    runner = CoverageRunner(command=command,
+                            snapshot=options.snapshot,
+                            trace_dir=options.trace_dir)
+
+    runner.run(args)
 
     if options.report:
-        html_dir = options.trace_dir
-        build_coverage_report(tracelog, html_dir)
+        runner.build_coverage_report()
+
+def main():
+    cmdline(TraceSaxon())
 
 
 if __name__ == "__main__":
