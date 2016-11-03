@@ -423,12 +423,13 @@ class HtmlCoverageWriter:
         if not(covering_file in self.covering_files):
             self.covering_files.append(covering_file)
 
-    def _filename_html(self, filename):
-        outname = os.path.join(self.output_dir,
-                               os.path.basename(filename) + ".html")
+    def _filename_html(self, filename, subdir=""):
+        filename = os.path.basename(filename)
+        outname = os.path.join(self.output_dir, subdir, filename + ".html")
         return outname
 
     def write_covering(self):
+        os.mkdir(os.path.join(self.output_dir, "source"))
         for filename in self.covering_files:
             code = open(filename).read()
             formatter = HtmlFormatter(linenos=True,
@@ -437,9 +438,9 @@ class HtmlCoverageWriter:
                                       noclobber_cssfile=True,
                                       lineanchors="line",
                                       full=True,
-                                      title=filename)
+                                      title=os.path.basename(filename))
             formatter.encoding = "utf-8"
-            outname = self._filename_html(filename)
+            outname = self._filename_html(filename, "source")
             outfile = open(outname, "w")
             highlight(code, self.lexer, formatter, outfile)
             outfile.close()
@@ -454,7 +455,7 @@ class HtmlCoverageWriter:
                 frags = covering_files.get(filename)
                 filepath, linenum = filename.split(":")
                 self._push_covering(filepath)
-                filepath = self._filename_html(filepath)
+                filepath = self._filename_html(filepath, "source")
                 p += '<a href="%s#line-%s">%s</a> (%s)\n' % \
                      (filepath, linenum, filename, ", ".join(frags))
             p += '</pre></span>'
