@@ -72,13 +72,17 @@ class CoverageRunner:
 
     def run(self, args):
         if not(self.command):
-            return
+            return 0
         self._prepare_tracedir()
-        self.command.run(args, trace_dir=self.trace_dir)
+        rc = self.command.run(args, trace_dir=self.trace_dir)
+        if rc != 0:
+            return rc
+
         self._write_tracelog()
 
         if self.write_report:
             self.build_coverage_report()
+        return rc
 
 
 def create_filename(dirname, basename, max_files=1000, try_basename=True):

@@ -1,6 +1,6 @@
 import os
 from subprocess import Popen
-from runcover import cmdline_parser, cmdline_runargs
+from xslcover.runcover import cmdline_parser, cmdline_runargs
 
 class TraceDblatex:
     def __init__(self, dblatex="dblatex"):
@@ -11,12 +11,21 @@ class TraceDblatex:
         cmd = [self.dblatex, "-T", "xsltcover"]
         cmd += args
         self.cmd = cmd
-        if trace_dir:
-            env = {}
-            env.update(os.environ)
-            env.update({ "TRACE_DIRECTORY": trace_dir })
+
+        # Extend the dblatex config dir, to find the xslcover.conf file
+        config_dir = os.environ.get("DBLATEX_CONFIG_FILES", "")
+        if config_dir:
+            pathsep = os.pathsep
         else:
-            env = None
+            pathsep = ""
+        config_dir += pathsep + os.path.abspath(os.path.dirname(__file__))
+        env = {}
+        env.update(os.environ)
+        env.update({"DBLATEX_CONFIG_FILES": config_dir})
+
+        # Specify the trace directory for saxon_xslt2
+        if trace_dir:
+            env.update({ "TRACE_DIRECTORY": trace_dir })
 
         p = Popen(cmd, env=env)
         rc = p.wait()

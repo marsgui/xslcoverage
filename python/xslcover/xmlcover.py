@@ -408,7 +408,7 @@ class HtmlCoverageWriter:
 
     def __init__(self, cssdir="htdocs"):
         self.lexer = get_lexer_by_name("xslt")
-        self.cssdir = cssdir
+        self.cssdir = os.path.join(os.path.dirname(__file__), cssdir)
         self.cssfile = "source.css"
         self.csscover = "cover.css"
         self.jscover = "tablecover.js"
@@ -429,7 +429,9 @@ class HtmlCoverageWriter:
         return outname
 
     def write_covering(self):
-        os.mkdir(os.path.join(self.output_dir, "source"))
+        html_dir = os.path.join(self.output_dir, "source")
+        if not(os.path.exists(html_dir)):
+            os.mkdir(html_dir)
         for filename in self.covering_files:
             code = open(filename).read()
             formatter = HtmlFormatter(linenos=True,
@@ -686,7 +688,6 @@ class CoverAnalyzer:
 
     def _process_stylesheet(self, xslnode, source):
         xslfile = self.getxsl(xslnode.get("file").replace("file:",""))
-        #print "process %s:%s" % (xslnode.get("file"),xslnode.get("line"))
         line = xslfile.getline(xslnode.get("line"))
         line.cover_fragment(xslnode.get("element"), source)
         self._parse_children(xslnode, source)
@@ -704,14 +705,6 @@ class CoverAnalyzer:
     def getxml(self, filename):
         return self.xmlfiles.get_or_create(filename)
 
-
-def main_filter():
-    import sys
-    xfilter = XmlFilter()
-    xslfile = sys.argv[1]
-    print "Comments of %s " % xslfile
-    content = open(xslfile).readlines()
-    comments = xfilter.filter_on_comment(content)
 
 def main():
     import sys
