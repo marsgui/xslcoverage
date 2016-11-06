@@ -1,4 +1,8 @@
-
+/*
+ * XSL Coverage styles to handle the statistics table, and the popups
+ * of the covered code lines of the XSL stylesheets made pretty by Pygments
+ *
+ */
 /* Track by color covered and uncovered lines */
 span.uncovered { background-color: #F4FA58; }
 span.covered { background-color: #D0F5A9; }
