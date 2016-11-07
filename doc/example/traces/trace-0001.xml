@@ -1,0 +1,584 @@
+<trace time="1478557871439">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/docbook.xsl" element="output" line="10" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="13" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="14" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="15" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="16" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="17" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="18" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="19" time="1478557871449">
+<end time="1478557871449"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="20" time="1478557871450">
+<end time="1478557871451"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" element="param" line="21" time="1478557871451">
+<end time="1478557871451"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/l10n.xsl" element="param" line="18" time="1478557871451">
+<end time="1478557871842"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/l10n.xsl" element="param" line="19" time="1478557871843">
+<end time="1478557871844"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="reference" line="20" time="1478557871844">
+<end time="1478557871844"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="preserve-space" line="41" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="strip-space" line="82" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="strip-space" line="129" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="133" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="173" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="216" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="293" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="698" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="699" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="700" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="701" time="1478557871845">
+<end time="1478557871845"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="702" time="1478557871845">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="text" line="702" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="703" time="1478557871847">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="text" line="703" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="704" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="705" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="706" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="707" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="708" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="709" time="1478557871847">
+<end time="1478557871847"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="variable" line="710" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="865" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="914" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1082" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1229" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1269" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="param" line="1304" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1502" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1680" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1830" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1871" time="1478557871848">
+<end time="1478557871848"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1912" time="1478557871848">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" element="template" line="1968" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/labels.xsl" element="mode" line="21" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/labels.xsl" element="template" line="793" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/labels.xsl" element="template" line="856" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/olink.xsl" element="key" line="6" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/olink.xsl" element="key" line="9" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/titles.xsl" element="mode" line="21" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/htmltbl.xsl" element="param" line="9" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="12" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="13" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="14" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="15" time="1478557871849">
+<end time="1478557871849"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="16" time="1478557871849">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="17" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="18" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="19" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="20" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="21" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="22" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="23" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="24" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" element="param" line="25" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" element="param" line="8" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" element="param" line="9" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" element="param" line="10" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" element="param" line="11" time="1478557871850">
+<end time="1478557871850"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" element="param" line="12" time="1478557871850">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/example.xsl" element="param" line="8" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/example.xsl" element="param" line="9" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" element="param" line="8" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" element="param" line="9" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" element="param" line="10" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" element="param" line="11" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" element="strip-space" line="638" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="9" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="10" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="11" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="12" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="13" time="1478557871851">
+<end time="1478557871851"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="14" time="1478557871851">
+<end time="1478557871852"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="15" time="1478557871852">
+<end time="1478557871852"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="16" time="1478557871852">
+<end time="1478557871852"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="17" time="1478557871852">
+<end time="1478557871852"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="param" line="19" time="1478557871852">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="choose" line="20" time="1478557871852">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="otherwise" line="24" time="1478557871852">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" element="text" line="25" time="1478557871852">
+<end time="1478557871852"/></stylesheet>
+<end time="1478557871853"/></stylesheet>
+<end time="1478557871853"/></stylesheet>
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/verbatimco.xsl" element="param" line="11" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/refentry.xsl" element="param" line="7" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/refentry.xsl" element="param" line="8" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/refentry.xsl" element="param" line="9" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/refentry.xsl" element="param" line="10" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/biblio.xsl" element="param" line="7" time="1478557871853">
+<end time="1478557871853"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/biblio.xsl" element="param" line="8" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/biblio.xsl" element="param" line="9" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/index.xsl" element="param" line="7" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/index.xsl" element="param" line="8" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="param" line="10" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="param" line="11" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="param" line="12" time="1478557871854">
+<end time="1478557871854"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="param" line="13" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="param" line="14" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="attribute-set" line="16" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" element="attribute-set" line="31" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lists.xsl" element="param" line="11" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lists.xsl" element="param" line="12" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lists.xsl" element="param" line="13" time="1478557871855">
+<end time="1478557871855"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lists.xsl" element="param" line="14" time="1478557871855">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/xref.xsl" element="param" line="7" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/xref.xsl" element="param" line="8" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="8" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="9" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="10" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="13" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="14" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="15" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="16" time="1478557871856">
+<end time="1478557871856"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="param" line="17" time="1478557871857">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="value-of" line="18" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="value-of" line="19" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" element="value-of" line="21" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/set.xsl" element="param" line="8" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="19" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="20" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="21" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="22" time="1478557871857">
+<end time="1478557871857"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="23" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="24" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="25" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="26" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="27" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="28" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="29" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="30" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="31" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" element="param" line="32" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="8" time="1478557871858">
+<end time="1478557871858"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="9" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="10" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="11" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="12" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="13" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="14" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="15" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="16" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="param" line="17" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="20" time="1478557871859">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="text" line="21" time="1478557871859">
+<end time="1478557871859"/></stylesheet>
+<end time="1478557871859"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="24" time="1478557871860">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="text" line="25" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="28" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="29" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" element="variable" line="30" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/version.xsl" element="variable" line="8" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="6" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="7" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="8" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="9" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="10" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="11" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="12" time="1478557871860">
+<end time="1478557871860"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="13" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="14" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="15" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="16" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="17" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="18" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="19" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="20" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="21" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="25" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="26" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="27" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="28" time="1478557871861">
+<end time="1478557871861"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="29" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="30" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="31" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="32" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="33" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="34" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="38" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="39" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="40" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="41" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="42" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="43" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="44" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="45" time="1478557871862">
+<end time="1478557871862"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="46" time="1478557871862">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="47" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="48" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="49" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="50" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="51" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="52" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="53" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="54" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="55" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="56" time="1478557871863">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="56" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="57" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="58" time="1478557871863">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="58" time="1478557871863">
+<end time="1478557871863"/></stylesheet>
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="59" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="60" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="61" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="62" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="63" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="65" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="66" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="67" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="68" time="1478557871864">
+<end time="1478557871864"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="69" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="70" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="71" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="72" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="73" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="74" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="75" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="77" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="param" line="78" time="1478557871865">
+<end time="1478557871865"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="variable" line="80" time="1478557871865">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="81" time="1478557871866">
+<end time="1478557871866"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="82" time="1478557871866">
+<end time="1478557871866"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="83" time="1478557871866">
+<end time="1478557871866"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="84" time="1478557871866">
+<end time="1478557871866"/></stylesheet>
+<end time="1478557871866"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="variable" line="87" time="1478557871866">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="88" time="1478557871866">
+<end time="1478557871866"/></stylesheet>
+<end time="1478557871866"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="variable" line="91" time="1478557871867">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="92" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="93" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="94" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" element="text" line="95" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/citation.xsl" element="param" line="8" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/citation.xsl" element="param" line="9" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/citation.xsl" element="param" line="10" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/equation.xsl" element="param" line="8" time="1478557871867">
+<end time="1478557871867"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/equation.xsl" element="param" line="9" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/equation.xsl" element="param" line="10" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/figure.xsl" element="param" line="9" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/figure.xsl" element="param" line="10" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/figure.xsl" element="param" line="11" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/figure.xsl" element="param" line="12" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" element="param" line="11" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" element="param" line="12" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" element="param" line="13" time="1478557871868">
+<end time="1478557871868"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" element="param" line="14" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" element="param" line="15" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobjectco.xsl" element="param" line="8" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" element="param" line="9" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" element="param" line="10" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" element="param" line="11" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" element="param" line="12" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" element="param" line="13" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/labelid.xsl" element="param" line="9" time="1478557871869">
+<end time="1478557871869"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/toc_lot.xsl" element="param" line="9" time="1478557871869">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/toc_lot.xsl" element="param" line="10" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/component.xsl" element="param" line="7" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/component.xsl" element="param" line="8" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/component.xsl" element="param" line="9" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/component.xsl" element="param" line="10" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/glossary.xsl" element="param" line="7" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/glossary.xsl" element="param" line="8" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/synopsis.xsl" element="strip-space" line="8" time="1478557871870">
+<end time="1478557871870"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/qandaset.xsl" element="param" line="9" time="1478557871870">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/annotation.xsl" element="param" line="13" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/annotation.xsl" element="key" line="15" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="16" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="17" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="18" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="19" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="20" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="21" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="22" time="1478557871871">
+<end time="1478557871871"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="23" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" element="param" line="24" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/docbook.xsl" element="key" line="85" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mathml2/mmltex.xsl" element="output" line="6" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mathml2/mmltex.xsl" element="strip-space" line="22" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/mathml2/mathml.xsl" element="strip-space" line="11" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/tmp/tmp_esO0R/custom.xsl" element="param" line="7" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/mkdoclist.xsl" element="output" line="6" time="1478557871872">
+<end time="1478557871872"/></stylesheet>
+<source  file="file:/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml" line="0" node="">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/mkdoclist.xsl" element="template" line="31" time="1478557871873">
+<stylesheet file="file:/home/ben/project/docbook/db2tex/dblatex/xsl/common/mkdoclist.xsl" element="if" line="32" time="1478557871874">
+<end time="1478557871874"/></stylesheet>
+<end time="1478557871874"/></stylesheet>
+</source>
+<end time="1478557871874"/></trace>

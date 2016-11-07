@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>stydebug.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>stydebug.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-3"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-4"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-debug&quot;</span><span class="nt">&gt;&lt;title&gt;</span>Debugging your Style<span class="nt">&lt;/title&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;para&gt;</span>It is not surprising if your first dblatex compilation fails with a fresh
+<a name="line-6"></a>LaTeX style. So, how to debug it when used with dblatex?<span class="nt">&lt;/para&gt;</span>
+<a name="line-7"></a><span class="nt">&lt;para&gt;</span>The following steps can help you:<span class="nt">&lt;/para&gt;</span>
+<a name="line-8"></a><span class="nt">&lt;procedure&gt;</span>
+<a name="line-9"></a><span class="nt">&lt;step&gt;&lt;para&gt;</span>Compile your file in the debug mode (option <span class="nt">&lt;option&gt;</span>-d<span class="nt">&lt;/option&gt;</span>).
+<a name="line-10"></a>When the compilation is done, the temporary working directory will not be
+<a name="line-11"></a>removed.
+<a name="line-12"></a><span class="nt">&lt;programlisting&gt;</span><span class="cp">&lt;![CDATA[</span>
+<a name="line-13"></a><span class="cp">$ dblatex --texstyle=./mystyle.sty -d file.xml</span>
+<a name="line-14"></a><span class="cp">...</span>
+<a name="line-15"></a><span class="cp">/tmp/tpub-ben-99629 is not removed</span>
+<a name="line-16"></a><span class="cp">]]&gt;</span><span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-17"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-18"></a><span class="nt">&lt;/step&gt;</span>
+<a name="line-19"></a><span class="nt">&lt;step&gt;&lt;para&gt;</span>Go under the building temporary directory, and set the environment
+<a name="line-20"></a>with the file <span class="nt">&lt;filename&gt;</span>env_tex<span class="nt">&lt;/filename&gt;</span>.
+<a name="line-21"></a><span class="nt">&lt;programlisting&gt;</span><span class="cp">&lt;![CDATA[</span>
+<a name="line-22"></a><span class="cp">$ cd /tmp/tpub-ben-99629</span>
+<a name="line-23"></a><span class="cp">$ . env_tex</span>
+<a name="line-24"></a><span class="cp">]]&gt;</span><span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-25"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-26"></a><span class="nt">&lt;/step&gt;</span>
+<a name="line-27"></a><span class="nt">&lt;step&gt;&lt;para&gt;</span>Compile the temporary latex file produced by the XSL stylesheets. Its
+<a name="line-28"></a>name has the suffix &quot;_tmp.tex&quot;.
+<a name="line-29"></a><span class="nt">&lt;programlisting&gt;</span><span class="cp">&lt;![CDATA[</span>
+<a name="line-30"></a><span class="cp">$ pdflatex file_tmp.tex</span>
+<a name="line-31"></a><span class="cp">$ [ many outputs here ]</span>
+<a name="line-32"></a><span class="cp">]]&gt;</span><span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-33"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-34"></a><span class="nt">&lt;/step&gt;</span>
+<a name="line-35"></a><span class="nt">&lt;step&gt;&lt;para&gt;</span>Now latex stops when it encounters an error so that you can debug
+<a name="line-36"></a>your stylesheet.
+<a name="line-37"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-38"></a><span class="nt">&lt;/step&gt;</span>
+<a name="line-39"></a><span class="nt">&lt;/procedure&gt;</span>
+<a name="line-40"></a><span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

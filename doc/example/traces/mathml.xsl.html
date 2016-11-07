@@ -1,0 +1,136 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>mathml.xsl coverage = 2/33 ( 6.06%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>mathml.xsl coverage = 2/33 ( 6.06%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-10"><pre></pre></span><span class="popuptext" id="pop-11"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span>
+</span><span class="unused">    <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>
+</span><span class="unused">    <span class="na">xmlns:m=</span><span class="s">&quot;http://www.w3.org/1998/Math/MathML&quot;</span>
+</span><span class="unused">    <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:import</span> <span class="na">href=</span><span class="s">&quot;mmltex.xsl&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- because xsltproc cannot strip &quot;m:*&quot; elements --&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:strip-space</span> <span class="na">elements=</span><span class="s">&quot;m:math m:mrow m:mstyle m:mtd m:mphantom</span>
+</span><span class="covered"><span class="s">                           m:mi m:mo m:ms m:mn m:mtext m:maction&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- hook for mml text template --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;mmltext&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;replaceEntities&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">select=</span><span class="s">&quot;normalize-space()&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- ====================================</span>
+</span><span class="unused"><span class="c">     MML TeX patches or missing templates</span>
+</span><span class="unused"><span class="c">     ==================================== --&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- to put mathml in a latex (informal) equation environment --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;m:math&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;ancestor::equation[not(child::title)]&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;ancestor::informalequation&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>\[<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span> \]<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-imports</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- don&#39;t know how to render this --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;m:maligngroup&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- 3.3.6 --&gt;</span>
+</span><span class="unused"><span class="c">&lt;!-- don&#39;t know how to render this --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;m:mpadded&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- 4.4.2.3 fn --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;m:fn&quot;</span><span class="nt">&gt;</span> <span class="c">&lt;!-- for m:fn alone --&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;m:malignmark|m:maction&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

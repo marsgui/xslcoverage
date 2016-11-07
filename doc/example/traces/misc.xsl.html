@@ -1,0 +1,98 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>misc.xsl coverage = 9/25 (36.00%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>misc.xsl coverage = 9/25 (36.00%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-13"><pre></pre></span><span class="popuptext" id="pop-14"><pre></pre></span><span class="popuptext" id="pop-15"><pre></pre></span><span class="popuptext" id="pop-16"><pre></pre></span><span class="popuptext" id="pop-17"><pre></pre></span><span class="popuptext" id="pop-18"><pre></pre></span><span class="popuptext" id="pop-19"><pre></pre></span><span class="popuptext" id="pop-20"><pre></pre></span><span class="popuptext" id="pop-21"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>
+</span><span class="unused">                <span class="na">xmlns:m=</span><span class="s">&quot;http://www.w3.org/1998/Math/MathML&quot;</span>
+</span><span class="unused">                <span class="na">version=</span><span class="s">&quot;1.0&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX</span>
+</span><span class="unused"><span class="c">    ############################################################################</span>
+</span><span class="unused"><span class="c">    This stylesheet contains some missing parameters and templates used by the</span>
+</span><span class="unused"><span class="c">    other common stylesheets. They are provided to have saxon working.</span>
+</span><span class="unused"><span class="c">    --&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;stylesheet.result.type&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;pdf&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;l10n.lang.value.rfc.compliant&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;use.role.for.mediaobject&quot;</span> <span class="na">select=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;preferred.mediaobject.role&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;use.svg&quot;</span> <span class="na">select=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;current.dir&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;formal.procedures&quot;</span> <span class="na">select=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;reference.autolabel&quot;</span><span class="nt">&gt;</span>I<span class="k">&lt;/xsl:param&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;use.role.as.xrefstyle&quot;</span> <span class="na">select=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;is.graphic.format&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;olink.outline&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;is.graphic.extension&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;orderedlist-starting-number&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;xref.xreflabel&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;lookup.key&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;pi.dbchoice_choice&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;systemIdToBaseURI&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

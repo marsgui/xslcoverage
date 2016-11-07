@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>pi.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>pi.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;!DOCTYPE appendix PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-2"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-3"></a>
+<a name="line-4"></a><span class="nt">&lt;appendix</span> <span class="na">id=</span><span class="s">&quot;sec-pis&quot;</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;title&gt;</span>Dblatex Processing Instruction Reference<span class="nt">&lt;/title&gt;</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;para&gt;</span>This is reference documentation for all processing
+<a name="line-8"></a>instructions<span class="nt">&lt;indexterm&gt;&lt;primary&gt;</span>Processing Instructions<span class="nt">&lt;/primary&gt;&lt;/indexterm&gt;</span>
+<a name="line-9"></a>in the dblatex XSL stylesheets.<span class="nt">&lt;/para&gt;</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Bibliography<span class="nt">&lt;/title&gt;</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;bibtex.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-14"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_citestyle.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-15"></a>
+<a name="line-16"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-17"></a>
+<a name="line-18"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>LaTeX<span class="nt">&lt;/title&gt;</span>
+<a name="line-19"></a>
+<a name="line-20"></a><span class="nt">&lt;para&gt;</span>If you do inject arbitrary LaTeX into the output stream you will
+<a name="line-21"></a>probably need to use the techniques found in <span class="nt">&lt;xref</span> <span class="na">linkend=</span><span class="s">&quot;sec-debug&quot;</span>
+<a name="line-22"></a><span class="nt">/&gt;</span>.<span class="nt">&lt;/para&gt;</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;latex.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Miscellaneous<span class="nt">&lt;/title&gt;</span>
+<a name="line-29"></a>
+<a name="line-30"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_angle.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-31"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;texmath.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-34"></a>
+<a name="line-35"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Tables<span class="nt">&lt;/title&gt;</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_bgcolor.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-38"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_table-width.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-39"></a>
+<a name="line-40"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-41"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-pi-lists&quot;</span><span class="nt">&gt;&lt;title&gt;</span>Lists<span class="nt">&lt;/title&gt;</span>
+<a name="line-42"></a>
+<a name="line-43"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_autowidth.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-44"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_colwidth.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-45"></a><span class="nt">&lt;xi:include</span> <span class="na">href=</span><span class="s">&quot;dblatex_list-presentation.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-48"></a><span class="nt">&lt;/appendix&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

@@ -1,0 +1,271 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>citation.xsl coverage = 23/85 (27.06%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>citation.xsl coverage = 23/85 (27.06%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-8"><pre></pre></span><span class="popuptext" id="pop-9"><pre></pre></span><span class="popuptext" id="pop-10"><pre></pre></span><span class="popuptext" id="pop-14"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (template)
+</pre></span><span class="popuptext" id="pop-15"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (if)
+</pre></span><span class="popuptext" id="pop-23"><pre></pre></span><span class="popuptext" id="pop-24"><pre></pre></span><span class="popuptext" id="pop-76"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (template)
+</pre></span><span class="popuptext" id="pop-78"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (variable)
+</pre></span><span class="popuptext" id="pop-79"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (call-template)
+</pre></span><span class="popuptext" id="pop-80"><pre></pre></span><span class="popuptext" id="pop-82"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (choose)
+</pre></span><span class="popuptext" id="pop-83"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (when)
+</pre></span><span class="popuptext" id="pop-84"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (text)
+</pre></span><span class="popuptext" id="pop-85"><pre></pre></span><span class="popuptext" id="pop-108"><pre></pre></span><span class="popuptext" id="pop-109"><pre></pre></span><span class="popuptext" id="pop-112"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (template)
+</pre></span><span class="popuptext" id="pop-113"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (apply-templates)
+</pre></span><span class="popuptext" id="pop-114"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (text)
+</pre></span><span class="popuptext" id="pop-116"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (value-of)
+</pre></span><span class="popuptext" id="pop-117"><pre><a href="/tmp/xslc/traces/16312233053/source/faq.xml.html#line-12">/home/ben/project/docbook/db2tex/dblatex/docs/faq.xml:12</a> (text)
+</pre></span><span class="popuptext" id="pop-118"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX</span>
+</span><span class="unused"><span class="c">    ############################################################################ --&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;citation.natbib.use&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;0&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;citation.natbib.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;citation.default.style&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Loads the natbib package if required --&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;citation.setup&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$citation.natbib.use!=&#39;0&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\usepackage<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$citation.natbib.options!=&#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>[<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$citation.natbib.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>]<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>{natbib}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Parses a cite macro like \citep[...][...] so that the bracket contents</span>
+</span><span class="unused"><span class="c">     are converted safely to latex strings. Special care about the optional</span>
+</span><span class="unused"><span class="c">     enclosing curly braces telling to use this content block [{...}] so that</span>
+</span><span class="unused"><span class="c">     you can put some &#39;[...]&#39; in it. --&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;cite-parse&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;macro&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;brackets&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;contains($macro,&#39;[{&#39;) and</span>
+</span><span class="uncovered"><span class="s">                    contains(substring-after($macro,&#39;[{&#39;),&#39;}]&#39;)&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;&#39;[{ }]&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;contains($macro,&#39;[&#39;) and</span>
+</span><span class="uncovered"><span class="s">                    contains(substring-after($macro,&#39;[&#39;),&#39;]&#39;)&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;&#39;[ ]&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$brackets!=&#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;bs&quot;</span> <span class="na">select=</span><span class="s">&quot;substring-before($brackets,&#39; &#39;)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;be&quot;</span> <span class="na">select=</span><span class="s">&quot;substring-after($brackets,&#39; &#39;)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;opt&quot;</span>
+</span><span class="uncovered">                  <span class="na">select=</span><span class="s">&quot;substring-before(substring-after($macro,$bs),$be)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;substring-before($macro,$bs)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$bs&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- escape brackets content --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;normalize-scape&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;string&quot;</span> <span class="na">select=</span><span class="s">&quot;$opt&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$be&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;cite-parse&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;macro&quot;</span>
+</span><span class="uncovered">                      <span class="na">select=</span><span class="s">&quot;substring-after($macro,concat($bs,$opt,$be))&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$macro&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Format a specific citation style from @role, a PI, or the default style.</span>
+</span><span class="unused"><span class="c">     The citation styles are disabled if natbib is not used --&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;citation&quot;</span> <span class="na">mode=</span><span class="s">&quot;cite-style&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">  <span class="c">&lt;!-- maybe a citation style from PI --&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;pi&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;pi.dblatex_citestyle&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="covered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$citation.natbib.use=&#39;0&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\cite<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;@role and (starts-with(@role,&#39;\cite&#39;) or</span>
+</span><span class="uncovered"><span class="s">                             starts-with(@role,&#39;\Cite&#39;))&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- a natbib citation style from @role --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;cite-parse&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;macro&quot;</span> <span class="na">select=</span><span class="s">&quot;@role&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;starts-with($pi,&#39;\cite&#39;) or starts-with($pi,&#39;\Cite&#39;)&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- a natbib citation style from PI --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;cite-parse&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;macro&quot;</span> <span class="na">select=</span><span class="s">&quot;$pi&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$citation.default.style!=&#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- the default natbib citation style --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;cite-parse&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;macro&quot;</span> <span class="na">select=</span><span class="s">&quot;$citation.default.style&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\cite<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;citation&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="na">mode=</span><span class="s">&quot;cite-style&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="unused">  <span class="c">&lt;!-- we take the raw text: we don&#39;t want that &quot;_&quot; becomes &quot;\_&quot; --&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

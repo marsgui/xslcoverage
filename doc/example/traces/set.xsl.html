@@ -1,0 +1,250 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>set.xsl coverage = 13/75 (17.33%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>set.xsl coverage = 13/75 (17.33%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-8"><pre></pre></span><span class="popuptext" id="pop-84"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (template)
+</pre></span><span class="popuptext" id="pop-86"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (variable)
+</pre></span><span class="popuptext" id="pop-87"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (apply-templates)
+</pre></span><span class="popuptext" id="pop-88"><pre></pre></span><span class="popuptext" id="pop-91"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (if)
+</pre></span><span class="popuptext" id="pop-97"><pre></pre></span><span class="popuptext" id="pop-98"><pre></pre></span><span class="popuptext" id="pop-107"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (template)
+</pre></span><span class="popuptext" id="pop-108"><pre></pre></span><span class="popuptext" id="pop-109"><pre></pre></span><span class="popuptext" id="pop-110"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (number)
+</pre></span><span class="popuptext" id="pop-111"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX </span>
+</span><span class="unused"><span class="c">    ############################################################################ --&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;set.book.num&quot;</span><span class="nt">&gt;</span>1<span class="k">&lt;/xsl:param&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- ################</span>
+</span><span class="unused"><span class="c">     # Set of books #</span>
+</span><span class="unused"><span class="c">     ################ --&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Handle all the books or a single book --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;set&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$set.book.num = &#39;all&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$output.quietly = 0&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:message</span><span class="nt">&gt;</span>Output all the books from the set<span class="k">&lt;/xsl:message&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- Write a latex file per book --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;//book&quot;</span> <span class="na">mode=</span><span class="s">&quot;build.texfile&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:message</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>Warning: only print the book [<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$set.book.num&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>]<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:message&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;//book[position()=$set.book.num]&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Chunk a tex file per book --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;book&quot;</span> <span class="na">mode=</span><span class="s">&quot;build.texfile&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;write.text.chunk&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;filename&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;bookname&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>.rtex<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:with-param&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;method&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;text&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:with-param&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Print out the book filename formatted according to &lt;template&gt; --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;book&quot;</span> <span class="na">mode=</span><span class="s">&quot;bookname&quot;</span> <span class="na">name=</span><span class="s">&quot;bookname&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;%b&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;exclude-gid&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;local-gid&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="na">mode=</span><span class="s">&quot;booknumber&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$local-gid != $exclude-gid&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;basename&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;(not(@id) and not(@xml:id)) or $use.id.as.filename = 0&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;concat(&#39;book&#39;, $local-gid)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;(@id|@xml:id)[1]&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;string-replace&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;string&quot;</span> <span class="na">select=</span><span class="s">&quot;$template&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;from&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;%b&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;to&quot;</span> <span class="na">select=</span><span class="s">&quot;$basename&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Give the list of the external documents that xr-hyper must know.</span>
+</span><span class="unused"><span class="c">     This template must be called in the latex book preamble.</span>
+</span><span class="unused"><span class="c">     --&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;make.external.docs&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">  <span class="c">&lt;!-- The list must contain only external books, not the current one --&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;local-gid&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span> <span class="na">mode=</span><span class="s">&quot;booknumber&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="unused">  <span class="c">&lt;!-- The list is meaningful only if several books are printed out --&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$set.book.num = &#39;all&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;//book[parent::set]&quot;</span> <span class="na">mode=</span><span class="s">&quot;bookname&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span>
+</span><span class="uncovered">                      <span class="na">select=</span><span class="s">&quot;&#39;\externaldocument{%b}[%b]&amp;#10;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;exclude-gid&quot;</span> <span class="na">select=</span><span class="s">&quot;$local-gid&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:apply-templates&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;set/setinfo&quot;</span><span class="nt">&gt;</span><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;set/title&quot;</span><span class="nt">&gt;</span><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;set/subtitle&quot;</span><span class="nt">&gt;</span><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Book numbering --&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;book&quot;</span> <span class="na">mode=</span><span class="s">&quot;booknumber&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:number</span> <span class="na">from=</span><span class="s">&quot;/&quot;</span>
+</span><span class="covered">              <span class="na">level=</span><span class="s">&quot;any&quot;</span>
+</span><span class="covered">              <span class="na">format=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

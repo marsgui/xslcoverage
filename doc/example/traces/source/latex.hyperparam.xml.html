@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>latex.hyperparam.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>latex.hyperparam.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE refentry PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot; &quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;refentry</span> <span class="na">id=</span><span class="s">&quot;latex.hyperparam&quot;</span><span class="nt">&gt;</span>
+<a name="line-4"></a>  <span class="nt">&lt;refmeta&gt;</span>
+<a name="line-5"></a>    <span class="nt">&lt;refentrytitle&gt;</span>latex.hyperparam<span class="nt">&lt;/refentrytitle&gt;</span>
+<a name="line-6"></a>  <span class="nt">&lt;/refmeta&gt;</span>
+<a name="line-7"></a>  <span class="nt">&lt;refnamediv&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;refname&gt;&lt;parameter&gt;</span>latex.hyperparam<span class="nt">&lt;/parameter&gt;&lt;/refname&gt;</span>
+<a name="line-9"></a>    <span class="nt">&lt;refpurpose&gt;</span>Options/parameters passed to <span class="nt">&lt;filename&gt;</span>hyperref<span class="nt">&lt;/filename&gt;&lt;/refpurpose&gt;</span>
+<a name="line-10"></a>  <span class="nt">&lt;/refnamediv&gt;</span>
+<a name="line-11"></a>  <span class="nt">&lt;refsynopsisdiv&gt;</span>
+<a name="line-12"></a>    <span class="nt">&lt;programlisting&gt;</span>
+<a name="line-13"></a>      <span class="nt">&lt;xi:include</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span> <span class="na">parse=</span><span class="s">&quot;text&quot;</span> <span class="na">href=</span><span class="s">&quot;syn/latex.hyperparam.xml&quot;</span><span class="nt">/&gt;</span>
+<a name="line-14"></a>    <span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-15"></a>  <span class="nt">&lt;/refsynopsisdiv&gt;</span>
+<a name="line-16"></a>  <span class="nt">&lt;refsection</span> <span class="na">id=</span><span class="s">&quot;sec-hyperparam&quot;</span><span class="nt">&gt;</span>
+<a name="line-17"></a>    <span class="nt">&lt;title&gt;</span>Description<span class="nt">&lt;/title&gt;</span>
+<a name="line-18"></a>     <span class="nt">&lt;para&gt;</span>
+<a name="line-19"></a>    This parameter gives the options to pass to the LaTeX hyperref package. No validity check is done. 
+<a name="line-20"></a>   <span class="nt">&lt;/para&gt;</span>
+<a name="line-21"></a>   <span class="nt">&lt;para&gt;</span>
+<a name="line-22"></a>    For instance, the Table of Content rendering (link color, etc.) can be changed. Look at the hyperref.sty documentation to know all the hyperref options available. 
+<a name="line-23"></a>   <span class="nt">&lt;/para&gt;</span>
+<a name="line-24"></a><span class="nt">&lt;example&gt;&lt;title&gt;</span>Configuring with latex.hyperparam<span class="nt">&lt;/title&gt;</span>
+<a name="line-25"></a>   <span class="nt">&lt;programlisting&gt;</span>
+<a name="line-26"></a><span class="cp">&lt;![CDATA[&lt;?xml version=&#39;1.0&#39; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+<a name="line-27"></a><span class="cp">]]&gt;&lt;![CDATA[&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; version=&#39;1.0&#39;&gt;</span>
+<a name="line-28"></a><span class="cp">]]&gt;&lt;![CDATA[ </span>
+<a name="line-29"></a><span class="cp">]]&gt;&lt;![CDATA[&lt;!-- We want TOC links in the titles (not in the page numbers), and blue. </span>
+<a name="line-30"></a><span class="cp">]]&gt;&lt;![CDATA[ --&gt;</span>
+<a name="line-31"></a><span class="cp">]]&gt;&lt;![CDATA[&lt;xsl:param name=&quot;latex.hyperparam&quot;&gt;colorlinks,linkcolor=blue&lt;/xsl:param&gt;</span>
+<a name="line-32"></a><span class="cp">]]&gt;&lt;![CDATA[</span>
+<a name="line-33"></a><span class="cp">]]&gt;&lt;![CDATA[&lt;/xsl:stylesheet&gt;</span>
+<a name="line-34"></a><span class="cp">]]&gt;</span>   <span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-35"></a><span class="nt">&lt;/example&gt;</span>
+<a name="line-36"></a>  <span class="nt">&lt;/refsection&gt;</span>
+<a name="line-37"></a><span class="nt">&lt;/refentry&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

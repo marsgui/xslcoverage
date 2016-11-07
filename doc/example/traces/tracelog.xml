@@ -1,0 +1,76 @@
+<trace-report>
+<command>dblatex -T xsltcover -o manual.pdf /home/ben/project/docbook/db2tex/dblatex/docs/manual.xml</command>
+<trace-files>
+<file path="/tmp/xslc/traces/16312233053/trace-0002.xml"/>
+<file path="/tmp/xslc/traces/16312233053/trace-0001.xml"/>
+<file path="/tmp/xslc/traces/16312233053/trace-0003.xml"/>
+</trace-files>
+<stylesheets>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/mklistings.xsl" md5sum="1436e9d161dd2f1c72c36b9c562b7b2f"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/docbook.xsl" md5sum="cf6c0004f7998e53d1472b69cae79458"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/misc.xsl" md5sum="1189ed6107d59ef1b38f0594e2db6c23"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/l10n.xsl" md5sum="f3c91b9b58a8b7c2610ad90b650ce01b"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/common.xsl" md5sum="77f8f089a7adaa3bada4d5775fdf5011"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/labels.xsl" md5sum="c9e016aad3cc1c0bea459ec5ac7cb76d"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/olink.xsl" md5sum="3d9365d5a07d61766d264d3fe501c0f5"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/titles.xsl" md5sum="2bf57d23525c29355ad8623deefbca31"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/htmltbl.xsl" md5sum="948c1b594a22c2c70ddadaa513b31ec6"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/tablen.xsl" md5sum="e89f82569e77819ed0935aede460d9c3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/admon.xsl" md5sum="01749fe5d43b71d8ff7e404a4fd3b292"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/example.xsl" md5sum="1844caaeaf07baf4515504e97f65a8a4"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/inlined.xsl" md5sum="187310c0009dc7a2a7ee021ea934ad04"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/verbatim.xsl" md5sum="989f260e2898d7261f2d1ddcc749008a"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/verbatimco.xsl" md5sum="6e7e52fc071778eeb9edff2a03d1eee2"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/refentry.xsl" md5sum="e647b80d353c45d1eab1d98c15a8630e"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/biblio.xsl" md5sum="cb07174568612b35d6a0925e6a5c2d11"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/index.xsl" md5sum="b4daa3fd9bd589d61cfcf7ffc469c786"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/footnote.xsl" md5sum="f481a62aa22d72cb0ded64e54517a51e"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/lists.xsl" md5sum="0b0f0ab333e54b85b88918a07d00162a"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/xref.xsl" md5sum="8a36ff0cab4f3b2cae1839ad53df7cbf"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/lang.xsl" md5sum="1081dc6cf7425583083d88dcff7e8606"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/set.xsl" md5sum="eee0ac8b3c055971b7590ef7689ad245"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl" md5sum="75c2a4c65c348628999f1776e918e1e0"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/preamble.xsl" md5sum="3fc0ddc182bd57c55ed2f6af0b85da26"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/version.xsl" md5sum="745329b1cdead875841927664c61fda3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/param.xsl" md5sum="64203f5134570dd340688abdc91b8d99"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/citation.xsl" md5sum="12d8e333c26cb7a4410f5f3768021a05"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/equation.xsl" md5sum="9bbef14b5df2bd735651a487b0fb9eb9"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/figure.xsl" md5sum="99a39bea039eee5ccfa3c9cde19ffb2e"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobject.xsl" md5sum="c7ae75c3819d8945842cc39df406800a"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/mediaobjectco.xsl" md5sum="de3582eef97bf71d7a3d36c53b13426b"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/callout.xsl" md5sum="ad4441ec82bd57a80a3382d93c38ae82"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/labelid.xsl" md5sum="f371ccd861fa7c452cbd05d296d269a7"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/toc_lot.xsl" md5sum="7eead9672896c2d7d562c15f2a253cc3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/component.xsl" md5sum="109cd84f8ece9d004757c3048b76e7de"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/glossary.xsl" md5sum="a8ca8df401ea83be7524030d7fb85be7"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/synopsis.xsl" md5sum="bb6b7615609f70e6af4c2b43c5296df9"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/qandaset.xsl" md5sum="5bf4406e8420247b063f10844b89fe88"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/annotation.xsl" md5sum="b06fbab34e9303300f9c837e4d7cfac3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/chunker.xsl" md5sum="bee731e128dfb17c86f15b8390b23448"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/mathml2/mmltex.xsl" md5sum="2b399ded21643ba9874058a7a6ae4736"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/mathml2/mathml.xsl" md5sum="a160b520795ee8c8c015cda6421b29f3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/mkdoclist.xsl" md5sum="150551b49a04503de8aa63a302c11185"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/main.xsl" md5sum="2d614dc55db26cc0c879b655f678824c"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/fasttext.xsl" md5sum="15747b4d5db398b186c2fe1e2a40a1c4"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/latex_book.xsl" md5sum="a55d978f76cef18bd81b16c9997070e7"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/pdfmeta.xsl" md5sum="5192dd376a93b8d015bb46941a39e331"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/revision.xsl" md5sum="ed06e787e2baf7ed6d1c22050bf7608a"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/para.xsl" md5sum="2cec29d7f4928fc55800efdc601a5ec8"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/sgmltag.xsl" md5sum="eda5e1e36056cbf4d51574f83f09e6af"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/gentext.xsl" md5sum="d3e50084042ca5379494076855e5ab13"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/lib.xsl" md5sum="2d1d9911ed4f68b24fcc22853d2cfe6f"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/legalnotice.xsl" md5sum="c0d6a3d71559ad64d11f2fd0f563cb57"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/cover.xsl" md5sum="0edd6eabcdab662aa9d367be31e52175"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/sections.xsl" md5sum="ab05043fb129ad4bfdb5335a5f664014"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/dingbat.xsl" md5sum="6a1c62243413538e3b0f7e913dae219d"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/chapter.xsl" md5sum="b51d7c96907236a616b295ae17ea7b95"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/format.xsl" md5sum="7917137a215d69fd289d2a52194f4133"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/scape.xsl" md5sum="a04edc5b4cf697cdcaf2bd3e00aa265a"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/pi.xsl" md5sum="e2f4bbbe4106a6987ceb44c8fbb5642b"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/url.xsl" md5sum="ddeed71c23cc8e60e004caeec4d63766"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/procedure.xsl" md5sum="96fe86c936d6334d2ea808a29e2a3ddf"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/newtbl.xsl" md5sum="639d3a9bee9156cf8023082d4632aad3"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/color.xsl" md5sum="126e39b3f8f0be61262ccdc331fd635d"/>
+<file path="/home/ben/project/docbook/db2tex/dblatex/xsl/appendix.xsl" md5sum="54f6f3d9e848d9cb3df73a1a23544990"/>
+</stylesheets>
+</trace-report>

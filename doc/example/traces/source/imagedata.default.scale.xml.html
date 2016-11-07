@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>imagedata.default.scale.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>imagedata.default.scale.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE refentry PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot; &quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;refentry</span> <span class="na">id=</span><span class="s">&quot;imagedata.default.scale&quot;</span><span class="nt">&gt;</span>
+<a name="line-4"></a>  <span class="nt">&lt;refmeta&gt;</span>
+<a name="line-5"></a>    <span class="nt">&lt;refentrytitle&gt;</span>imagedata.default.scale<span class="nt">&lt;/refentrytitle&gt;</span>
+<a name="line-6"></a>  <span class="nt">&lt;/refmeta&gt;</span>
+<a name="line-7"></a>  <span class="nt">&lt;refnamediv&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;refname&gt;&lt;parameter&gt;</span>imagedata.default.scale<span class="nt">&lt;/parameter&gt;&lt;/refname&gt;</span>
+<a name="line-9"></a>    <span class="nt">&lt;refpurpose&gt;</span>Specifies the default image scaling properties<span class="nt">&lt;/refpurpose&gt;</span>
+<a name="line-10"></a>  <span class="nt">&lt;/refnamediv&gt;</span>
+<a name="line-11"></a>  <span class="nt">&lt;refsynopsisdiv&gt;</span>
+<a name="line-12"></a>    <span class="nt">&lt;programlisting&gt;</span>
+<a name="line-13"></a>      <span class="nt">&lt;xi:include</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span> <span class="na">parse=</span><span class="s">&quot;text&quot;</span> <span class="na">href=</span><span class="s">&quot;syn/imagedata.default.scale.xml&quot;</span><span class="nt">/&gt;&lt;/programlisting&gt;</span>
+<a name="line-14"></a>  <span class="nt">&lt;/refsynopsisdiv&gt;</span>
+<a name="line-15"></a>  <span class="nt">&lt;refsection</span> <span class="na">id=</span><span class="s">&quot;sec-defaultscale&quot;</span><span class="nt">&gt;</span>
+<a name="line-16"></a>    <span class="nt">&lt;title&gt;</span>Description<span class="nt">&lt;/title&gt;</span>
+<a name="line-17"></a>
+<a name="line-18"></a>    <span class="nt">&lt;para&gt;</span>Default scale to apply to every <span class="nt">&lt;sgmltag&gt;</span>imagedata<span class="nt">&lt;/sgmltag&gt;</span> that does not contain any scaling attribute.<span class="nt">&lt;/para&gt;</span>
+<a name="line-19"></a><span class="nt">&lt;para&gt;</span>By default this parameter is set to `pagebound`
+<a name="line-20"></a>so that the included images keep their natural size up to the page
+<a name="line-21"></a>boundaries.<span class="nt">&lt;/para&gt;</span>
+<a name="line-22"></a><span class="nt">&lt;para&gt;</span>Two other special parameters are available:
+<a name="line-23"></a>&#39;maxwidth=<span class="nt">&lt;replaceable&gt;</span>width<span class="nt">&lt;/replaceable&gt;</span>&#39; and
+<a name="line-24"></a>&#39;maxheight=<span class="nt">&lt;replaceable&gt;</span>height<span class="nt">&lt;/replaceable&gt;</span>&#39; where <span class="nt">&lt;replaceable&gt;</span>width<span class="nt">&lt;/replaceable&gt;</span>
+<a name="line-25"></a>and <span class="nt">&lt;replaceable&gt;</span>height<span class="nt">&lt;/replaceable&gt;</span> define the maximum image
+<a name="line-26"></a>dimensions, i.e. the image keeps its natural size up to the specified
+<a name="line-27"></a>maximum dimension. Both &#39;maxwidth&#39; and &#39;maxheight&#39; settings can be combined in a
+<a name="line-28"></a>comma separated list.<span class="nt">&lt;/para&gt;</span>
+<a name="line-29"></a><span class="nt">&lt;para&gt;</span>Example:
+<a name="line-30"></a><span class="nt">&lt;programlisting&gt;</span>dblatex -P imagedata.default.scale=maxwidth=10cm,maxheight=8cm file.xml<span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-31"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-32"></a><span class="nt">&lt;para&gt;</span>Except these special reserved values, the expected value of the parameter
+<a name="line-33"></a>must be some valid options passed to the \includegraphics command.<span class="nt">&lt;/para&gt;</span>
+<a name="line-34"></a>  <span class="nt">&lt;/refsection&gt;</span>
+<a name="line-35"></a><span class="nt">&lt;/refentry&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

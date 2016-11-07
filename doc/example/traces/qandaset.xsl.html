@@ -1,0 +1,372 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>qandaset.xsl coverage = 1/127 ( 0.79%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>qandaset.xsl coverage = 1/127 ( 0.79%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-9"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX </span>
+</span><span class="unused"><span class="c">    ############################################################################ --&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- qandaset parameters --&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;qanda.defaultlabel&quot;</span><span class="nt">&gt;</span>number<span class="k">&lt;/xsl:param&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandaset&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">  <span class="c">&lt;!-- is it displayed as a section? --&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span>
+</span><span class="uncovered">                <span class="na">select=</span><span class="s">&quot;(title|blockinfo/title|info/title)[1]&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$title&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;makeheading&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;level&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;get.sect.level&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:with-param&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;num&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;0&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">select=</span><span class="s">&quot;$title&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandaset/title&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandaset/blockinfo&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- ############</span>
+</span><span class="unused"><span class="c">     # qandadiv #</span>
+</span><span class="unused"><span class="c">     ############ --&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandadiv/title&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandadiv&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">  <span class="c">&lt;!-- display the title according the section depth --&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;l&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;count(ancestor::qandadiv)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;lset&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;get.sect.level&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;n&quot;</span> <span class="na">select=</span><span class="s">&quot;ancestor::qandaset&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;blockinfo/title|info/title|title&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;makeheading&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;level&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;ancestor::qandaset[title|blockinfo/title|info/title]&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$l+$lset+1&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$l+$lset&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:with-param&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- ##############</span>
+</span><span class="unused"><span class="c">     # qandaentry #</span>
+</span><span class="unused"><span class="c">     ############## --&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- should be really processed --&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;qandaentry&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;defaultlabel&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;ancestor::qandaset[@defaultlabel]&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;ancestor::qandaset/@defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$qanda.defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="unused">  <span class="c">&lt;!-- if default label is a number, display the quandaentries</span>
+</span><span class="unused"><span class="c">       like an enumerate list</span>
+</span><span class="unused"><span class="c">    --&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;not(preceding-sibling::qandaentry) and</span>
+</span><span class="uncovered"><span class="s">                $defaultlabel=&#39;number&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>\begin{enumerate}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;question&quot;</span> <span class="na">mode=</span><span class="s">&quot;wp&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;defaultlabel&quot;</span> <span class="na">select=</span><span class="s">&quot;$defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:apply-templates&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;answer&quot;</span> <span class="na">mode=</span><span class="s">&quot;wp&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;defaultlabel&quot;</span> <span class="na">select=</span><span class="s">&quot;$defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:apply-templates&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;not(following-sibling::qandaentry) and</span>
+</span><span class="uncovered"><span class="s">                $defaultlabel=&#39;number&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>\end{enumerate}<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;question&quot;</span> <span class="na">mode=</span><span class="s">&quot;wp&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$defaultlabel=&#39;number&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\item<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;label&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">      <span class="c">&lt;!-- label has priority on defaultlabel --&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>[\textbf{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}]<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>{}<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;label&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\textbf{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}~<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$defaultlabel=&#39;qanda&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\textbf{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;gentext&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;key&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;question&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}~<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="unused">
+</span><span class="unused">  <span class="c">&lt;!-- don&#39;t use textit since we can have several paragraphs --&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>{\it <span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;answer&quot;</span> <span class="na">mode=</span><span class="s">&quot;wp&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;defaultlabel&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$defaultlabel=&#39;number&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- answers are other paragraphs of the enumerated entry --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;label&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>\noindent\textbf{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;label&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}~<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$defaultlabel=&#39;qanda&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>\noindent\textbf{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;gentext&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;key&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;answer&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}~<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

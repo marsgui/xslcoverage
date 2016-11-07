@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>xref.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>xref.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;iso-8859-1&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-3"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-4"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-xref&quot;</span><span class="nt">&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;title&gt;</span>Using XRefsyle and Olinks<span class="nt">&lt;/title&gt;</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;para&gt;</span>Since version 0.2.7 you can use the <span class="nt">&lt;sgmltag&gt;</span>xrefstyle<span class="nt">&lt;/sgmltag&gt;</span> attribute
+<a name="line-8"></a>like you would do with the DocBook Project stylesheets for HTML output.<span class="nt">&lt;/para&gt;</span>
+<a name="line-9"></a>
+<a name="line-10"></a><span class="nt">&lt;para&gt;</span>Furthermore, you can also use <span class="nt">&lt;sgmltag&gt;</span>olink<span class="nt">&lt;/sgmltag&gt;</span>s. Note that
+<a name="line-11"></a>Olinking is used in the PDF version of this manual,
+<a name="line-12"></a>in <span class="nt">&lt;xref</span> <span class="na">linkend=</span><span class="s">&quot;sec-changelog&quot;</span><span class="nt">/&gt;</span>.<span class="nt">&lt;/para&gt;</span>
+<a name="line-13"></a>
+<a name="line-14"></a><span class="nt">&lt;para&gt;</span>Actually, the common DocBook Project stylesheets version 1.72 are now
+<a name="line-15"></a>used by dblatex to handle all of these features.<span class="nt">&lt;/para&gt;</span>
+<a name="line-16"></a>
+<a name="line-17"></a><span class="nt">&lt;para&gt;</span>These features are fully described in the <span class="nt">&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://www.sagehill.net/docbookxsl/index.html&quot;</span><span class="nt">&gt;</span>DocBook XSL: The Complete Guide<span class="nt">&lt;/ulink&gt;</span> book by Bob Stayton. In particular, the following sections cover these topics:
+<a name="line-18"></a>
+<a name="line-19"></a><span class="nt">&lt;itemizedlist&gt;</span>
+<a name="line-20"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://www.sagehill.net/docbookxsl/CustomXrefs.html&quot;</span><span class="nt">/&gt;</span> explains how to use <span class="nt">&lt;sgmltag&gt;</span>xrefstyle<span class="nt">&lt;/sgmltag&gt;</span>.<span class="nt">&lt;/para&gt;&lt;/listitem&gt;</span>
+<a name="line-21"></a>
+<a name="line-22"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://www.sagehill.net/docbookxsl/Olinking.html&quot;</span><span class="nt">/&gt;</span> explains how to use <span class="nt">&lt;sgmltag&gt;</span>olink<span class="nt">&lt;/sgmltag&gt;</span>s.<span class="nt">&lt;/para&gt;&lt;/listitem&gt;</span>
+<a name="line-23"></a><span class="nt">&lt;/itemizedlist&gt;</span>
+<a name="line-24"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-25"></a>
+<a name="line-26"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-ulink-style&quot;</span><span class="nt">&gt;</span>
+<a name="line-27"></a><span class="nt">&lt;title&gt;</span>Specific xrefstyle for <span class="nt">&lt;sgmltag&gt;</span>ulink<span class="nt">&lt;/sgmltag&gt;&lt;/title&gt;</span>
+<a name="line-28"></a>
+<a name="line-29"></a><span class="nt">&lt;para&gt;</span>Dblatex defines a template that can be applied through
+<a name="line-30"></a>the xrefstyle attribute to format an <span class="nt">&lt;sgmltag&gt;</span>ulink<span class="nt">&lt;/sgmltag&gt;</span>. The template has
+<a name="line-31"></a>the following general form: 
+<a name="line-32"></a><span class="nt">&lt;literal&gt;</span>url[.{show|hide}][.{after|infoot}]<span class="nt">&lt;/literal&gt;&lt;/para&gt;</span>
+<a name="line-33"></a>
+<a name="line-34"></a><span class="nt">&lt;para&gt;</span>The principle is that the <span class="nt">&lt;literal&gt;</span>show<span class="nt">&lt;/literal&gt;</span> and
+<a name="line-35"></a><span class="nt">&lt;literal&gt;</span>hide<span class="nt">&lt;/literal&gt;</span> parts override locally for this ulink the
+<a name="line-36"></a><span class="nt">&lt;parameter&gt;</span>ulink.show<span class="nt">&lt;/parameter&gt;</span> parameter,
+<a name="line-37"></a>and the <span class="nt">&lt;literal&gt;</span>after<span class="nt">&lt;/literal&gt;</span> and
+<a name="line-38"></a><span class="nt">&lt;literal&gt;</span>infoot<span class="nt">&lt;/literal&gt;</span> parts override locally the
+<a name="line-39"></a><span class="nt">&lt;parameter&gt;</span>ulink.footnotes<span class="nt">&lt;/parameter&gt;</span> parameter.<span class="nt">&lt;/para&gt;</span>
+<a name="line-40"></a>
+<a name="line-41"></a><span class="nt">&lt;para&gt;</span>When only one part is defined, only one setup is overriden, and the other setup depends on the corresponding global parameter.<span class="nt">&lt;/para&gt;</span>
+<a name="line-42"></a>
+<a name="line-43"></a><span class="nt">&lt;para&gt;</span>See <span class="nt">&lt;xref</span> <span class="na">linkend=</span><span class="s">&quot;ulink.show&quot;</span><span class="nt">/&gt;</span> to have several examples of use of the ulink xrefstyle template.<span class="nt">&lt;/para&gt;</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-46"></a>
+<a name="line-47"></a><span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

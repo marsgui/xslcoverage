@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>revision.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>revision.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a>  <span class="nt">&lt;section&gt;&lt;title&gt;</span>Document Revisions<span class="nt">&lt;/title&gt;</span>
+<a name="line-2"></a>  <span class="nt">&lt;para&gt;</span>
+<a name="line-3"></a>   The attribute <span class="nt">&lt;sgmltag&gt;</span>revisionflag<span class="nt">&lt;/sgmltag&gt;</span> is usefull to identify the changes between two revisions of a document. This information is managed by dblatex, that adds revision bars in the margin of the paragraphs changed, such like in this <span class="nt">&lt;phrase</span> <span class="na">revisionflag=</span><span class="s">&quot;changed&quot;</span><span class="nt">&gt;</span>paragraph<span class="nt">&lt;/phrase&gt;</span>.
+<a name="line-4"></a>  <span class="nt">&lt;/para&gt;</span>
+<a name="line-5"></a>  <span class="nt">&lt;para&gt;</span>
+<a name="line-6"></a>   Adding the revision flags can be manual, but its is tedious and error prone. The <span class="nt">&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://sourceforge.net/projects/diffmk/&quot;</span><span class="nt">&gt;</span>diffmk<span class="nt">&lt;/ulink&gt;</span> tool by Norman Walsh can do the work for you. See <span class="nt">&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://www.sagehill.net/docbookxsl/Changebars.html&quot;</span><span class="nt">/&gt;</span> for more details about how to use it.
+<a name="line-7"></a>  <span class="nt">&lt;/para&gt;</span>
+<a name="line-8"></a><span class="nt">&lt;note&gt;&lt;para&gt;</span>
+<a name="line-9"></a>With old changebar packages the revision bars only appear when using the &quot;dvips&quot;
+<a name="line-10"></a>driver. This limitation has been fixed with changebar greater or equal 
+<a name="line-11"></a>to v3.5c.
+<a name="line-12"></a><span class="nt">&lt;/para&gt;&lt;/note&gt;</span>
+<a name="line-13"></a>  <span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

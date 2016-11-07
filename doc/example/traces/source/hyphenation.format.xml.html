@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>hyphenation.format.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>hyphenation.format.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE refentry PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot; &quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-3"></a><span class="nt">&lt;refentry</span> <span class="na">id=</span><span class="s">&quot;hyphenation.format&quot;</span><span class="nt">&gt;</span>
+<a name="line-4"></a>  <span class="nt">&lt;refmeta&gt;</span>
+<a name="line-5"></a>    <span class="nt">&lt;refentrytitle&gt;</span>hyphenation.format<span class="nt">&lt;/refentrytitle&gt;</span>
+<a name="line-6"></a>  <span class="nt">&lt;/refmeta&gt;</span>
+<a name="line-7"></a>  <span class="nt">&lt;refnamediv&gt;</span>
+<a name="line-8"></a>    <span class="nt">&lt;refname&gt;&lt;parameter&gt;</span>hyphenation.format<span class="nt">&lt;/parameter&gt;&lt;/refname&gt;</span>
+<a name="line-9"></a>    <span class="nt">&lt;refpurpose&gt;</span>Predefined formats to hyphenate<span class="nt">&lt;/refpurpose&gt;</span>
+<a name="line-10"></a>  <span class="nt">&lt;/refnamediv&gt;</span>
+<a name="line-11"></a>  <span class="nt">&lt;refsynopsisdiv&gt;</span>
+<a name="line-12"></a>    <span class="nt">&lt;programlisting&gt;</span>
+<a name="line-13"></a>      <span class="nt">&lt;xi:include</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span> <span class="na">parse=</span><span class="s">&quot;text&quot;</span> <span class="na">href=</span><span class="s">&quot;syn/hyphenation.format.xml&quot;</span><span class="nt">/&gt;&lt;/programlisting&gt;</span>
+<a name="line-14"></a>  <span class="nt">&lt;/refsynopsisdiv&gt;</span>
+<a name="line-15"></a>  <span class="nt">&lt;refsection&gt;</span>
+<a name="line-16"></a>    <span class="nt">&lt;title&gt;</span>Description<span class="nt">&lt;/title&gt;</span>
+<a name="line-17"></a>    <span class="nt">&lt;para&gt;</span>This parameter replaces the parameter
+<a name="line-18"></a>    <span class="nt">&lt;parameter&gt;</span>monoseq.hyphenation<span class="nt">&lt;/parameter&gt;</span> and its role is more general.
+<a name="line-19"></a>    It contains a comma separated list of the predefined inline
+<a name="line-20"></a>    formats that must be agressively hyphenated. It means that all the
+<a name="line-21"></a>    elements rendered with these formats are then hyphenated.<span class="nt">&lt;/para&gt;</span>
+<a name="line-22"></a>    <span class="nt">&lt;para&gt;</span>The predefined formats that can be hyphenated when contained in the
+<a name="line-23"></a>    list are:
+<a name="line-24"></a>    <span class="nt">&lt;variablelist&gt;</span>
+<a name="line-25"></a>      <span class="nt">&lt;varlistentry&gt;</span>
+<a name="line-26"></a>      <span class="nt">&lt;term&gt;</span>monoseq<span class="nt">&lt;/term&gt;</span>
+<a name="line-27"></a>      <span class="nt">&lt;listitem&gt;</span>
+<a name="line-28"></a>      <span class="nt">&lt;para&gt;</span>Monospaced font.<span class="nt">&lt;/para&gt;</span>
+<a name="line-29"></a>      <span class="nt">&lt;/listitem&gt;</span>
+<a name="line-30"></a>      <span class="nt">&lt;/varlistentry&gt;</span>
+<a name="line-31"></a>      <span class="nt">&lt;varlistentry&gt;</span>
+<a name="line-32"></a>      <span class="nt">&lt;term&gt;</span>sansseq<span class="nt">&lt;/term&gt;</span>
+<a name="line-33"></a>      <span class="nt">&lt;listitem&gt;</span>
+<a name="line-34"></a>      <span class="nt">&lt;para&gt;</span>Sans serif like font.<span class="nt">&lt;/para&gt;</span>
+<a name="line-35"></a>      <span class="nt">&lt;/listitem&gt;</span>
+<a name="line-36"></a>      <span class="nt">&lt;/varlistentry&gt;</span>
+<a name="line-37"></a>      <span class="nt">&lt;varlistentry&gt;</span>
+<a name="line-38"></a>      <span class="nt">&lt;term&gt;</span>boldmonoseq<span class="nt">&lt;/term&gt;</span>
+<a name="line-39"></a>      <span class="nt">&lt;listitem&gt;</span>
+<a name="line-40"></a>      <span class="nt">&lt;para&gt;</span>Bold monospaced font.<span class="nt">&lt;/para&gt;</span>
+<a name="line-41"></a>      <span class="nt">&lt;/listitem&gt;</span>
+<a name="line-42"></a>      <span class="nt">&lt;/varlistentry&gt;</span>
+<a name="line-43"></a>      <span class="nt">&lt;varlistentry&gt;</span>
+<a name="line-44"></a>      <span class="nt">&lt;term&gt;</span>italicmonoseq<span class="nt">&lt;/term&gt;</span>
+<a name="line-45"></a>      <span class="nt">&lt;listitem&gt;</span>
+<a name="line-46"></a>      <span class="nt">&lt;para&gt;</span>Italic monospaced font.<span class="nt">&lt;/para&gt;</span>
+<a name="line-47"></a>      <span class="nt">&lt;/listitem&gt;</span>
+<a name="line-48"></a>      <span class="nt">&lt;/varlistentry&gt;</span>
+<a name="line-49"></a>    <span class="nt">&lt;/variablelist&gt;</span>
+<a name="line-50"></a>    <span class="nt">&lt;/para&gt;</span>
+<a name="line-51"></a>    <span class="nt">&lt;para&gt;</span>If one wants no hyphenation at all, he must set the parameter to
+<a name="line-52"></a>    &quot;nohyphen&quot;. In this case dblatex tries to avoid overfull boxes (words in
+<a name="line-53"></a>    the margins) but keeps the words splittable only on their natural
+<a name="line-54"></a>    hyphenation points which can end up to no hyphenation at all for literal
+<a name="line-55"></a>    words like URLs or technical terms.<span class="nt">&lt;/para&gt;</span>
+<a name="line-56"></a>  <span class="nt">&lt;/refsection&gt;</span>
+<a name="line-57"></a>  <span class="nt">&lt;refsection&gt;</span>
+<a name="line-58"></a>    <span class="nt">&lt;title&gt;</span>See Also<span class="nt">&lt;/title&gt;</span>
+<a name="line-59"></a>    <span class="nt">&lt;para&gt;&lt;parameter&gt;</span>monoseq.hyphenation<span class="nt">&lt;/parameter&gt;&lt;/para&gt;</span>
+<a name="line-60"></a>  <span class="nt">&lt;/refsection&gt;</span>
+<a name="line-61"></a><span class="nt">&lt;/refentry&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

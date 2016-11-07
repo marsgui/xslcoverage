@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>music.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>music.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-3"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-4"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-music&quot;</span><span class="nt">&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;title&gt;</span>Musical Notation<span class="nt">&lt;/title&gt;</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;para&gt;</span>Dblatex does not itself present musical notation.  Of course,
+<a name="line-8"></a>images of musical scores can be incorporated into dblatex output as
+<a name="line-9"></a>can any other sort of images.  For a more comprehensive solution which
+<a name="line-10"></a>better integrates the typesetting of text with musical notation the
+<a name="line-11"></a>LilyPond project (<span class="nt">&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://www.lilypond.org/&quot;</span><span class="nt">/&gt;</span>) provides a
+<a name="line-12"></a>facility for including musical notation within DocBook documents.
+<a name="line-13"></a>LilyPond provides a program, <span class="nt">&lt;command&gt;</span>lilypond-book<span class="nt">&lt;/command&gt;</span>, that
+<a name="line-14"></a>pre-processes DocBook documents containing LilyPond musical notation
+<a name="line-15"></a>and which can automatically invoke <span class="nt">&lt;command&gt;</span>dblatex<span class="nt">&lt;/command&gt;</span> to
+<a name="line-16"></a>produce PDFs integrating musical notation with text.<span class="nt">&lt;/para&gt;</span>
+<a name="line-17"></a>
+<a name="line-18"></a><span class="c">&lt;!-- It would be nice to use &lt;citation&gt; here instead of &lt;quote&gt;. --&gt;</span>
+<a name="line-19"></a><span class="nt">&lt;para&gt;</span>Information regards <span class="nt">&lt;command&gt;</span>lilypond-book<span class="nt">&lt;/command&gt;</span> is, at
+<a name="line-20"></a>present, found in LilyPond&#39;s <span class="nt">&lt;quote&gt;</span>Usage<span class="nt">&lt;/quote&gt;</span> manual, the
+<a name="line-21"></a><span class="nt">&lt;quote&gt;</span>Running lilypond-book<span class="nt">&lt;/quote&gt;</span> chapter, the <span class="nt">&lt;quote&gt;</span>Integrating
+<a name="line-22"></a>music and text<span class="nt">&lt;/quote&gt;</span> section.<span class="nt">&lt;/para&gt;</span>
+<a name="line-23"></a>
+<a name="line-24"></a><span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>
