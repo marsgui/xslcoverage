@@ -13,7 +13,7 @@ class TraceSaxon:
     _classpath = ":".join(["%(saxon_path)s/saxon.jar",
                            "%(xml_resolver_path)s/xml-resolver.jar",
                            "/etc/xml/resolver",
-                           "%(xerces_path)s/xerces-2_11_0/xercesImpl.jar",
+                           "%(xerces_path)s/xercesImpl.jar",
                            "%(xslcover_path)s/xslcover.jar"])
 
     def __init__(self):
@@ -22,7 +22,6 @@ class TraceSaxon:
                          "xslcover_path"):
             java_paths[path_key] = config.get_value(path_key, "/usr/share/java")
         self.classpath = self._classpath % java_paths
-        print self.classpath
 
         self.cmd = ["java", "-classpath", self.classpath,
            "-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration",

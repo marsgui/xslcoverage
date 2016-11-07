@@ -2,6 +2,7 @@
 import sys
 import os
 
+# Package path setup
 package_base = \
 os.path.realpath(os.path.join(os.path.dirname(sys.argv[0]), ".."))
 sys.path.append(os.path.join(package_base, "python"))
@@ -9,7 +10,7 @@ sys.path.append(os.path.join(package_base, "python"))
 from xslcover import config
 from xslcover import saxon_xslt2
 
-config.set_config(xslcover_path=os.path.join(package_base, "java"),
-                  xerces_path="/home/ben/manip/saxon/xerces-2_11_0")
+# Package configuration
+config.set_config(xslcover_path=os.path.join(package_base, "java"))
 
 saxon_xslt2.main()
