@@ -1,3 +1,6 @@
+#
+# XSL Coverage - See COPYRIGHT
+#
 import os
 import re
 import textwrap
@@ -542,7 +545,7 @@ class HtmlCoverageWriter:
         outfile.write(header + body + footer)
         outfile.close()
         # Copy the styles 
-        for cssfile in glob.glob(os.path.join(self.cssdir, "*")):
+        for cssfile in glob.glob(os.path.join(self.cssdir, "*.*s*")):
             shutil.copy(cssfile, self.output_dir)
 
     def write(self, tracelog, coverage_list, output_dir=""):
