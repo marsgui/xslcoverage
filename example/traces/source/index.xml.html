@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>index.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>index.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-3"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-4"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-index&quot;</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;title&gt;</span>Creating an Index<span class="nt">&lt;/title&gt;</span>
+<a name="line-6"></a>
+<a name="line-7"></a>  <span class="nt">&lt;para&gt;</span>
+<a name="line-8"></a>   An index is automatically generated if some index entries (<span class="nt">&lt;sgmltag&gt;</span>indexterm<span class="nt">&lt;/sgmltag&gt;</span>), telling the terms to put in the index, are written in the document. The <span class="nt">&lt;sgmltag&gt;</span>keyword<span class="nt">&lt;/sgmltag&gt;</span> elements are not printed but are also added to the index.
+<a name="line-9"></a>  <span class="nt">&lt;/para&gt;</span>
+<a name="line-10"></a><span class="nt">&lt;example&gt;&lt;title&gt;</span>Index Entry<span class="nt">&lt;/title&gt;</span>
+<a name="line-11"></a>  <span class="nt">&lt;programlisting</span> <span class="na">language=</span><span class="s">&quot;XML&quot;</span><span class="nt">&gt;</span>
+<a name="line-12"></a><span class="cp">&lt;![CDATA[&lt;para&gt;In this paragraph is described the function </span>
+<a name="line-13"></a><span class="cp">&lt;function&gt;strcpy&lt;/function&gt;&lt;indexterm&gt;&lt;primary&gt;strcpy&lt;/primary&gt;&lt;/indexterm&gt;.</span>
+<a name="line-14"></a><span class="cp">&lt;/para&gt;</span>
+<a name="line-15"></a><span class="cp">]]&gt;</span>  <span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-16"></a><span class="nt">&lt;/example&gt;</span>
+<a name="line-17"></a>  <span class="nt">&lt;para&gt;</span>
+<a name="line-18"></a>   The index is put at the end of the document. It is not possible to put it somewhere else.
+<a name="line-19"></a>  <span class="nt">&lt;/para&gt;</span>
+<a name="line-20"></a>
+<a name="line-21"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-index-locale&quot;</span><span class="nt">&gt;&lt;title&gt;</span>Internationalized Indexes<span class="nt">&lt;/title&gt;</span>
+<a name="line-22"></a>
+<a name="line-23"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-index-tools&quot;</span><span class="nt">&gt;&lt;title&gt;</span>Indexing Tools<span class="nt">&lt;/title&gt;</span>
+<a name="line-24"></a><span class="nt">&lt;para&gt;&lt;command&gt;</span>Makeindex<span class="nt">&lt;/command&gt;</span> is used by default to build the index. It works fine for latin charset but it is not
+<a name="line-25"></a>suited for other charsets and UTF-8 encoding. Moreover its sorting rule is
+<a name="line-26"></a>not suited for many languages.<span class="nt">&lt;/para&gt;</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="nt">&lt;para&gt;</span>Therefore dblatex gives the possibility to use
+<a name="line-29"></a><span class="nt">&lt;command&gt;</span>xindy<span class="nt">&lt;/command&gt;</span> that allows internationalized indexing. When xindy
+<a name="line-30"></a>is used, the sorting language used is deduced from the Docbook document lang.
+<a name="line-31"></a>If the document lang has no correspondance for xindy, or if you want to force
+<a name="line-32"></a>the use of a specific sorting language, you can specify the sorting language
+<a name="line-33"></a>to use. With Xindy you can
+<a name="line-34"></a>also provide your own sort rules, but see the official Xindy documentation
+<a name="line-35"></a>for more details.<span class="nt">&lt;/para&gt;</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="nt">&lt;para&gt;</span>A parameter is provided to use xindy instead of makeindex:
+<a name="line-38"></a><span class="nt">&lt;itemizedlist&gt;</span>
+<a name="line-39"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;parameter&gt;</span>latex.index.tool<span class="nt">&lt;/parameter&gt;</span>=xindy tells dblatex 
+<a name="line-40"></a>to use xindy instead of makeindex (default).<span class="nt">&lt;/para&gt;</span>
+<a name="line-41"></a><span class="nt">&lt;/listitem&gt;</span>
+<a name="line-42"></a><span class="nt">&lt;/itemizedlist&gt;</span>
+<a name="line-43"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-44"></a>
+<a name="line-45"></a><span class="nt">&lt;para&gt;</span>A typical use is then:
+<a name="line-46"></a><span class="nt">&lt;screen&gt;</span>
+<a name="line-47"></a>dblatex -P latex.index.tool=xindy file.xml
+<a name="line-48"></a><span class="nt">&lt;/screen&gt;</span>
+<a name="line-49"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-52"></a>
+<a name="line-53"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Index Sorting<span class="nt">&lt;/title&gt;</span>
+<a name="line-54"></a><span class="nt">&lt;para&gt;&lt;command&gt;</span>Makeindex<span class="nt">&lt;/command&gt;</span> has very few methods to change its
+<a name="line-55"></a>index sorting rules, except the <span class="nt">&lt;option&gt;</span>-g<span class="nt">&lt;/option&gt;</span> and <span class="nt">&lt;option&gt;</span>-L<span class="nt">&lt;/option&gt;</span> options which are not very hepfull in a DocBook context. On the contrary <span class="nt">&lt;command&gt;</span>xindy<span class="nt">&lt;/command&gt;</span> can sort the index according to
+<a name="line-56"></a>a specific language.<span class="nt">&lt;/para&gt;</span>
+<a name="line-57"></a>
+<a name="line-58"></a><span class="nt">&lt;para&gt;</span>When xindy is used as index tool, <span class="nt">&lt;command&gt;</span>dblatex<span class="nt">&lt;/command&gt;</span> passes to
+<a name="line-59"></a>xindy through the xindy <span class="nt">&lt;option&gt;</span>-L<span class="nt">&lt;/option&gt;</span> option
+<a name="line-60"></a>the language name corresponding to the <span class="nt">&lt;literal&gt;</span>lang<span class="nt">&lt;/literal&gt;</span> attribute of the
+<a name="line-61"></a>document. If the document has no language or if <span class="nt">&lt;command&gt;</span>xindy<span class="nt">&lt;/command&gt;</span>
+<a name="line-62"></a>does not support the document language, the default sorting is applied. In this
+<a name="line-63"></a>case you can use the following parameter:
+<a name="line-64"></a>
+<a name="line-65"></a><span class="nt">&lt;itemizedlist&gt;</span>
+<a name="line-66"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;parameter&gt;</span>latex.index.language<span class="nt">&lt;/parameter&gt;</span> specifies the
+<a name="line-67"></a>language used to sort the indexes. Currently this parameter is relevant
+<a name="line-68"></a>only for xindy. The language set must be known by xindy (see the xindy
+<a name="line-69"></a>documentation). When not set (or empty) the sorting language to apply
+<a name="line-70"></a>is deduced from the document lang.<span class="nt">&lt;/para&gt;</span>
+<a name="line-71"></a><span class="nt">&lt;/listitem&gt;</span>
+<a name="line-72"></a><span class="nt">&lt;/itemizedlist&gt;</span>
+<a name="line-73"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-74"></a>
+<a name="line-75"></a><span class="nt">&lt;para&gt;</span>The parameter can be used like any other like this:
+<a name="line-76"></a><span class="nt">&lt;screen&gt;</span>
+<a name="line-77"></a>dblatex -P latex.index.language=german-din file.xml
+<a name="line-78"></a><span class="nt">&lt;/screen&gt;</span>
+<a name="line-79"></a>
+<a name="line-80"></a>But it can also be used through an XSL configuration file to provide new mapping
+<a name="line-81"></a>rules between ISO lang codes and known xindy languages, or override the current
+<a name="line-82"></a>mapping done by dblatex as shown in <span class="nt">&lt;xref</span> <span class="na">linkend=</span><span class="s">&quot;xsl-index-lang&quot;</span><span class="nt">/&gt;</span>.
+<a name="line-83"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-84"></a>
+<a name="line-85"></a><span class="nt">&lt;example</span> <span class="na">id=</span><span class="s">&quot;xsl-index-lang&quot;</span><span class="nt">&gt;&lt;title&gt;</span>XSL Index Language Setup<span class="nt">&lt;/title&gt;</span>
+<a name="line-86"></a><span class="nt">&lt;para&gt;</span>By default dblatex maps the <span class="nt">&lt;literal&gt;</span>de<span class="nt">&lt;/literal&gt;</span> lang
+<a name="line-87"></a>code to the language named <span class="nt">&lt;literal&gt;</span>german-din<span class="nt">&lt;/literal&gt;</span>, and has no
+<a name="line-88"></a>correspondance to map <span class="nt">&lt;literal&gt;</span>cy<span class="nt">&lt;/literal&gt;</span> (Welsh) or <span class="nt">&lt;literal&gt;</span>eu<span class="nt">&lt;/literal&gt;</span>
+<a name="line-89"></a>(Basque). The following setup provides a mapping for these cases:
+<a name="line-90"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-91"></a>
+<a name="line-92"></a><span class="nt">&lt;programlisting</span> <span class="na">language=</span><span class="s">&quot;XML&quot;</span><span class="nt">&gt;</span>
+<a name="line-93"></a><span class="cp">&lt;![CDATA[&lt;xsl:param name=&quot;latex.index.tool&quot;&gt;xindy&lt;/xsl:param&gt;</span>
+<a name="line-94"></a>
+<a name="line-95"></a><span class="cp">&lt;xsl:param name=&quot;latex.index.language&quot;&gt;</span>
+<a name="line-96"></a><span class="cp">  &lt;xsl:variable name=&quot;lang&quot;&gt;</span>
+<a name="line-97"></a><span class="cp">    &lt;xsl:call-template name=&quot;l10n.language&quot;&gt;</span>
+<a name="line-98"></a><span class="cp">      &lt;xsl:with-param name=&quot;target&quot; select=&quot;(/set|/book|/article)[1]&quot;/&gt;</span>
+<a name="line-99"></a><span class="cp">      &lt;xsl:with-param name=&quot;xref-context&quot; select=&quot;true()&quot;/&gt;</span>
+<a name="line-100"></a><span class="cp">    &lt;/xsl:call-template&gt;</span>
+<a name="line-101"></a><span class="cp">  &lt;/xsl:variable&gt;</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class="cp">  &lt;!-- Define Xindy lang to use in specific cases --&gt;</span>
+<a name="line-104"></a><span class="cp">  &lt;xsl:choose&gt;</span>
+<a name="line-105"></a><span class="cp">  &lt;xsl:when test=&quot;$lang=&#39;de&#39;&quot;&gt;german-duden&lt;/xsl:when&gt;</span>
+<a name="line-106"></a><span class="cp">  &lt;xsl:when test=&quot;$lang=&#39;cy&#39;&quot;&gt;english&lt;/xsl:when&gt;</span>
+<a name="line-107"></a><span class="cp">  &lt;xsl:when test=&quot;$lang=&#39;eu&#39;&quot;&gt;french&lt;/xsl:when&gt;</span>
+<a name="line-108"></a><span class="cp">  &lt;/xsl:choose&gt;</span>
+<a name="line-109"></a><span class="cp">&lt;/xsl:param&gt;</span>
+<a name="line-110"></a><span class="cp">]]&gt;</span> <span class="nt">&lt;/programlisting&gt;</span>
+<a name="line-111"></a><span class="nt">&lt;/example&gt;</span>
+<a name="line-112"></a>
+<a name="line-113"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-114"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-115"></a><span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+  <title>locale.xml</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="source.css" type="text/css">
+</head>
+<body>
+<h2>locale.xml</h2>
+
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</pre></div></td><td class="code"><div class="source"><pre><a name="line-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span>
+<a name="line-2"></a><span class="cp">&lt;!DOCTYPE section PUBLIC &quot;-//OASIS//DTD DocBook XML V4.4//EN&quot;</span>
+<a name="line-3"></a><span class="cp">&quot;http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd&quot;&gt;</span>
+<a name="line-4"></a><span class="nt">&lt;section</span> <span class="na">xmlns:xi=</span><span class="s">&quot;http://www.w3.org/2001/XInclude&quot;</span><span class="nt">&gt;</span>
+<a name="line-5"></a><span class="nt">&lt;title&gt;</span>Locale Support<span class="nt">&lt;/title&gt;</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="nt">&lt;section</span> <span class="na">id=</span><span class="s">&quot;sec-doc-encode&quot;</span><span class="nt">&gt;</span>
+<a name="line-8"></a><span class="nt">&lt;title&gt;</span>Document Encoding<span class="nt">&lt;/title&gt;</span>
+<a name="line-9"></a>
+<a name="line-10"></a><span class="nt">&lt;para&gt;</span>By default the latex document produced by <span class="nt">&lt;command&gt;</span>dblatex<span class="nt">&lt;/command&gt;</span> is
+<a name="line-11"></a>encoded in latin1, that fits well for roman-characters. This said,
+<a name="line-12"></a>a real international support involves some kind of Unicode (UTF8)
+<a name="line-13"></a>support.<span class="nt">&lt;/para&gt;</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="nt">&lt;para&gt;</span>In dblatex, the Unicode support is done by two methods that can be selected
+<a name="line-16"></a>by some parameters:
+<a name="line-17"></a>
+<a name="line-18"></a><span class="nt">&lt;itemizedlist&gt;</span>
+<a name="line-19"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;parameter&gt;</span>latex.unicode.use<span class="nt">&lt;/parameter&gt;</span>=1 asks for including the
+<a name="line-20"></a>unicode package (initially provided by Passivetex) in order to
+<a name="line-21"></a>handle many of the unicode characters in a latin1 encoded document.<span class="nt">&lt;/para&gt;</span>
+<a name="line-22"></a><span class="nt">&lt;/listitem&gt;</span>
+<a name="line-23"></a><span class="nt">&lt;listitem&gt;&lt;para&gt;&lt;parameter&gt;</span>latex.encoding<span class="nt">&lt;/parameter&gt;</span>=utf8 produces a document
+<a name="line-24"></a>encoded in UTF8, that is compiled in UTF8. It requires to have the
+<a name="line-25"></a><span class="nt">&lt;literal&gt;</span>ucs<span class="nt">&lt;/literal&gt;</span> package installed.<span class="nt">&lt;/para&gt;</span>
+<a name="line-26"></a><span class="nt">&lt;/listitem&gt;</span>
+<a name="line-27"></a><span class="nt">&lt;/itemizedlist&gt;</span>
+<a name="line-28"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-29"></a>
+<a name="line-30"></a><span class="nt">&lt;para&gt;</span>In some languages like Chinese, Japanese or Korean, the latex document
+<a name="line-31"></a>must be in UTF8. Therefore, the UTF8 encoding is forced for these languages
+<a name="line-32"></a>whatever the parameter values are.<span class="nt">&lt;/para&gt;</span>
+<a name="line-33"></a>
+<a name="line-34"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-35"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Babel Languages<span class="nt">&lt;/title&gt;</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="nt">&lt;para&gt;</span>Dblatex should be able to handle most of the languages supported by the
+<a name="line-38"></a>babel package. Just set the
+<a name="line-39"></a><span class="nt">&lt;literal&gt;</span>lang=<span class="nt">&lt;replaceable&gt;</span>lang<span class="nt">&lt;/replaceable&gt;&lt;/literal&gt;</span> attribute in the root
+<a name="line-40"></a>document element and dblatex will load
+<a name="line-41"></a>the appropriate babel language.<span class="nt">&lt;/para&gt;</span>
+<a name="line-42"></a>
+<a name="line-43"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-44"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>CJK Languages<span class="nt">&lt;/title&gt;</span>
+<a name="line-45"></a>
+<a name="line-46"></a><span class="nt">&lt;para&gt;</span>Dblatex can handle the CJK languages thanks to the CJK package. The CJK
+<a name="line-47"></a>package must be installed to have this support available.<span class="nt">&lt;/para&gt;</span>
+<a name="line-48"></a>
+<a name="line-49"></a><span class="nt">&lt;para&gt;</span>As said in <span class="nt">&lt;xref</span> <span class="na">linkend=</span><span class="s">&quot;sec-doc-encode&quot;</span><span class="nt">/&gt;</span> the latex file is encoded
+<a name="line-50"></a>in UTF8. Moreover, the Cyberbit fonts are then used.<span class="nt">&lt;/para&gt;</span>
+<a name="line-51"></a>
+<a name="line-52"></a><span class="nt">&lt;para&gt;</span>The install of the CJK package and Cyberbit fonts are well described at:
+<a name="line-53"></a><span class="nt">&lt;ulink</span> <span class="na">url=</span><span class="s">&quot;http://kile.sourceforge.net/Documentation/html/cjk.html&quot;</span><span class="nt">/&gt;</span>.
+<a name="line-54"></a><span class="nt">&lt;/para&gt;</span>
+<a name="line-55"></a>
+<a name="line-56"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Korean Support<span class="nt">&lt;/title&gt;</span>
+<a name="line-57"></a>
+<a name="line-58"></a><span class="nt">&lt;para&gt;</span>Dblatex does not use the HLatex package to drive Korean documents. It does
+<a name="line-59"></a>not use the <span class="nt">&lt;command&gt;</span>hmakeindex<span class="nt">&lt;/command&gt;</span> nor the <span class="nt">&lt;command&gt;</span>hbibtex<span class="nt">&lt;/command&gt;</span> tool.
+<a name="line-60"></a>Currently, Korean is handled like Chinese and Japanese with the CJK package.<span class="nt">&lt;/para&gt;</span>
+<a name="line-61"></a>
+<a name="line-62"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-63"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-64"></a>
+<a name="line-65"></a><span class="nt">&lt;section&gt;&lt;title&gt;</span>Mixing the languages<span class="nt">&lt;/title&gt;</span>
+<a name="line-66"></a>
+<a name="line-67"></a><span class="nt">&lt;para&gt;</span>Dblatex cannot handle correctly a document containing several elements
+<a name="line-68"></a>with different <span class="nt">&lt;sgmltag&gt;</span>lang<span class="nt">&lt;/sgmltag&gt;</span> values. In particular, if the main
+<a name="line-69"></a>document lang is not one of the CJK language, a portion of text written in CJK
+<a name="line-70"></a>will not be handled correctly and it can result in a compilation crash.<span class="nt">&lt;/para&gt;</span>
+<a name="line-71"></a><span class="nt">&lt;para&gt;</span>Even if the langs mixed do not end to a compilation failure, only the
+<a name="line-72"></a>main document lang will be taken into account.<span class="nt">&lt;/para&gt;</span>
+<a name="line-73"></a><span class="nt">&lt;/section&gt;</span>
+<a name="line-74"></a><span class="nt">&lt;/section&gt;</span>
+</pre></div>
+</td></tr></table></body>
+</html>

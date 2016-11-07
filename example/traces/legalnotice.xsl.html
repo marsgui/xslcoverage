@@ -1,0 +1,87 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>legalnotice.xsl coverage = 5/21 (23.81%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>legalnotice.xsl coverage = 5/21 (23.81%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-21"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (template)
+</pre></span><span class="popuptext" id="pop-22"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (param)
+</pre></span><span class="popuptext" id="pop-23"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (if)
+</pre></span><span class="popuptext" id="pop-30"><pre></pre></span><span class="popuptext" id="pop-31"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span> <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX </span>
+</span><span class="unused"><span class="c">    ############################################################################ --&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;legalnotice&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\def\DBKlegaltitle{<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;title&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\begin{DBKlegalnotice}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;*[not(self::title)]&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\end{DBKlegalnotice}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">match=</span><span class="s">&quot;legalnotice/title&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:apply-templates</span><span class="nt">/&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;print.legalnotice&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;nodes&quot;</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$nodes&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span><span class="ni">&amp;#10;</span>%% Legalnotices<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="unused">    <span class="c">&lt;!-- beware, save verbatim since we use a command --&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;$nodes&quot;</span> <span class="na">mode=</span><span class="s">&quot;save.verbatim&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\def\DBKlegalblock{<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:apply-templates</span> <span class="na">select=</span><span class="s">&quot;$nodes&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

@@ -1,0 +1,440 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>chunker.xsl coverage = 9/183 ( 4.92%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>chunker.xsl coverage = 9/183 ( 4.92%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-16"><pre></pre></span><span class="popuptext" id="pop-17"><pre></pre></span><span class="popuptext" id="pop-18"><pre></pre></span><span class="popuptext" id="pop-19"><pre></pre></span><span class="popuptext" id="pop-20"><pre></pre></span><span class="popuptext" id="pop-21"><pre></pre></span><span class="popuptext" id="pop-22"><pre></pre></span><span class="popuptext" id="pop-23"><pre></pre></span><span class="popuptext" id="pop-24"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>
+</span><span class="unused">                <span class="na">xmlns:exsl=</span><span class="s">&quot;http://exslt.org/common&quot;</span>
+</span><span class="unused">                <span class="na">version=</span><span class="s">&quot;1.0&quot;</span>
+</span><span class="unused">                <span class="na">extension-element-prefixes=</span><span class="s">&quot;exsl&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX</span>
+</span><span class="unused"><span class="c">    ############################################################################ --&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- All of this is taken from the DocBook Project chunker.xsl file, with some</span>
+</span><span class="unused"><span class="c">     parts stripped (saxon, xalan support). We assume that exsl:document()</span>
+</span><span class="unused"><span class="c">     is supported by any XSLT now. Moreover only text file output are supported</span>
+</span><span class="unused"><span class="c">     here. --&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.method&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;text&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.encoding&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;UTF-8&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.indent&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.omit-xml-declaration&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.standalone&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.doctype-public&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.doctype-system&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.media-type&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;chunker.output.cdata-section-elements&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;write.chunk&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;filename&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;quiet&quot;</span> <span class="na">select=</span><span class="s">&quot;$output.quietly&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;method&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.method&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;encoding&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.encoding&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;indent&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.indent&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;omit-xml-declaration&quot;</span>
+</span><span class="uncovered">             <span class="na">select=</span><span class="s">&quot;$chunker.output.omit-xml-declaration&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;standalone&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.standalone&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;doctype-public&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.doctype-public&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;doctype-system&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.doctype-system&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;media-type&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.media-type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;cdata-section-elements&quot;</span>
+</span><span class="uncovered">             <span class="na">select=</span><span class="s">&quot;$chunker.output.cdata-section-elements&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$quiet = 0&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:message</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>Writing <span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$filename&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;name(.) != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span> for <span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;name(.)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;@id or @xml:id&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>(<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;(@id|@xml:id)[1]&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>)<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:message&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;element-available(&#39;exsl:document&#39;)&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="unused">        <span class="c">&lt;!-- Handle the permutations ... --&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$media-type != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public != &#39;&#39; and $doctype-system != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">media-type=</span><span class="s">&quot;{$media-type}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-public=</span><span class="s">&quot;{$doctype-public}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-system=</span><span class="s">&quot;{$doctype-system}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public != &#39;&#39; and $doctype-system = &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">media-type=</span><span class="s">&quot;{$media-type}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-public=</span><span class="s">&quot;{$doctype-public}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public = &#39;&#39; and $doctype-system != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">media-type=</span><span class="s">&quot;{$media-type}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-system=</span><span class="s">&quot;{$doctype-system}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span><span class="c">&lt;!-- $doctype-public = &#39;&#39; and $doctype-system = &#39;&#39;&quot;&gt; --&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">media-type=</span><span class="s">&quot;{$media-type}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public != &#39;&#39; and $doctype-system != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-public=</span><span class="s">&quot;{$doctype-public}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-system=</span><span class="s">&quot;{$doctype-system}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public != &#39;&#39; and $doctype-system = &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-public=</span><span class="s">&quot;{$doctype-public}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$doctype-public = &#39;&#39; and $doctype-system != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">doctype-system=</span><span class="s">&quot;{$doctype-system}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span><span class="c">&lt;!-- $doctype-public = &#39;&#39; and $doctype-system = &#39;&#39;&quot;&gt; --&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;exsl:document</span> <span class="na">href=</span><span class="s">&quot;{$filename}&quot;</span>
+</span><span class="uncovered">                             <span class="na">method=</span><span class="s">&quot;{$method}&quot;</span>
+</span><span class="uncovered">                             <span class="na">encoding=</span><span class="s">&quot;{$encoding}&quot;</span>
+</span><span class="uncovered">                             <span class="na">indent=</span><span class="s">&quot;{$indent}&quot;</span>
+</span><span class="uncovered">                             <span class="na">omit-xml-declaration=</span><span class="s">&quot;{$omit-xml-declaration}&quot;</span>
+</span><span class="uncovered">                             <span class="na">cdata-section-elements=</span><span class="s">&quot;{$cdata-section-elements}&quot;</span>
+</span><span class="uncovered">                             <span class="na">standalone=</span><span class="s">&quot;{$standalone}&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">                <span class="k">&lt;xsl:copy-of</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">              <span class="nt">&lt;/exsl:document&gt;</span>
+</span><span class="uncovered">            <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="unused">      <span class="c">&lt;!-- it doesn&#39;t matter since we won&#39;t be making chunks... --&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:message</span> <span class="na">terminate=</span><span class="s">&quot;yes&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>Can&#39;t make chunks with <span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;system-property(&#39;xsl:vendor&#39;)&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>&#39;s processor.<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:message&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused">
+</span><span class="uncovered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;write.text.chunk&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;filename&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;quiet&quot;</span> <span class="na">select=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;method&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;text&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;encoding&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.encoding&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;media-type&quot;</span> <span class="na">select=</span><span class="s">&quot;$chunker.output.media-type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">  <span class="k">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">&quot;write.chunk&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;filename&quot;</span> <span class="na">select=</span><span class="s">&quot;$filename&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;quiet&quot;</span> <span class="na">select=</span><span class="s">&quot;$quiet&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;method&quot;</span> <span class="na">select=</span><span class="s">&quot;$method&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;encoding&quot;</span> <span class="na">select=</span><span class="s">&quot;$encoding&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;indent&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;omit-xml-declaration&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;standalone&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;no&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;doctype-public&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;doctype-system&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;media-type&quot;</span> <span class="na">select=</span><span class="s">&quot;$media-type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;cdata-section-elements&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">&quot;content&quot;</span> <span class="na">select=</span><span class="s">&quot;$content&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">  <span class="k">&lt;/xsl:call-template&gt;</span>
+</span><span class="uncovered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

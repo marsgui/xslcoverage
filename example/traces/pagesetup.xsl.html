@@ -1,0 +1,303 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+       "http://www.w3.org/TR/html4/strict.dtd">
+
+    <html>
+    <head>
+      <title>pagesetup.xsl coverage = 36/73 (49.32%)</title>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="source.css" type="text/css">
+      <link rel="stylesheet" href="cover.css" type="text/css">
+      <script type="text/javascript" src="covertable.js"></script>
+    </head>
+    <body onload="fill_popups()">
+    <h2>pagesetup.xsl coverage = 36/73 (49.32%)</h2>
+    <div class="popup-list">
+<span class="popuptext" id="pop-19"><pre></pre></span><span class="popuptext" id="pop-20"><pre></pre></span><span class="popuptext" id="pop-21"><pre></pre></span><span class="popuptext" id="pop-22"><pre></pre></span><span class="popuptext" id="pop-23"><pre></pre></span><span class="popuptext" id="pop-24"><pre></pre></span><span class="popuptext" id="pop-25"><pre></pre></span><span class="popuptext" id="pop-26"><pre></pre></span><span class="popuptext" id="pop-27"><pre></pre></span><span class="popuptext" id="pop-28"><pre></pre></span><span class="popuptext" id="pop-29"><pre></pre></span><span class="popuptext" id="pop-30"><pre></pre></span><span class="popuptext" id="pop-31"><pre></pre></span><span class="popuptext" id="pop-32"><pre></pre></span><span class="popuptext" id="pop-34"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (template)
+</pre></span><span class="popuptext" id="pop-36"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (variable)
+</pre></span><span class="popuptext" id="pop-37"><pre></pre></span><span class="popuptext" id="pop-38"><pre></pre></span><span class="popuptext" id="pop-39"><pre></pre></span><span class="popuptext" id="pop-40"><pre></pre></span><span class="popuptext" id="pop-41"><pre></pre></span><span class="popuptext" id="pop-42"><pre></pre></span><span class="popuptext" id="pop-43"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (geometry)
+</pre></span><span class="popuptext" id="pop-44"><pre></pre></span><span class="popuptext" id="pop-46"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (variable)
+</pre></span><span class="popuptext" id="pop-47"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (for-each)
+</pre></span><span class="popuptext" id="pop-48"><pre><a href="/tmp/xslc/traces/16312233053/source/pagesetup.xsl.html#line--1">/home/ben/project/docbook/db2tex/dblatex/xsl/pagesetup.xsl:-1</a> (if)
+</pre></span><span class="popuptext" id="pop-53"><pre></pre></span><span class="popuptext" id="pop-54"><pre></pre></span><span class="popuptext" id="pop-55"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (value-of)
+</pre></span><span class="popuptext" id="pop-56"><pre></pre></span><span class="popuptext" id="pop-59"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (if)
+</pre></span><span class="popuptext" id="pop-63"><pre></pre></span><span class="popuptext" id="pop-65"><pre><a href="/tmp/xslc/traces/16312233053/source/manual.xml.html#line-4">/home/ben/project/docbook/db2tex/dblatex/docs/manual.xml:4</a> (if)
+</pre></span><span class="popuptext" id="pop-115"><pre></pre></span><span class="popuptext" id="pop-117"><pre></pre></span></div>
+<table class="sourcetable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre></div></td><td class="code"><div class="source"><pre><span class="unused"><span class="cp">&lt;?xml version=&#39;1.0&#39;?&gt;</span>
+</span><span class="unused"><span class="k">&lt;xsl:stylesheet</span> <span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span>
+</span><span class="unused">                <span class="na">xmlns:exsl=</span><span class="s">&quot;http://exslt.org/common&quot;</span>
+</span><span class="unused">                <span class="na">exclude-result-prefixes=</span><span class="s">&quot;exsl&quot;</span>
+</span><span class="unused">                <span class="na">version=</span><span class="s">&#39;1.0&#39;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!--############################################################################</span>
+</span><span class="unused"><span class="c">    XSLT Stylesheet DocBook -&gt; LaTeX </span>
+</span><span class="unused"><span class="c">    ############################################################################</span>
+</span><span class="unused"><span class="c">    </span>
+</span><span class="unused"><span class="c">    This stylesheet allows to setup paper and page dimensions through some</span>
+</span><span class="unused"><span class="c">    predefined parameters. Most of the page setup parameters come from the</span>
+</span><span class="unused"><span class="c">    DocBook XSL FO parameters. The latex packages used to perform this setup</span>
+</span><span class="unused"><span class="c">    are the well known &#39;geometry&#39; and &#39;crop&#39;.</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">    This feature has been sponsored by Freexian (http://www.freexian.com).</span>
+</span><span class="unused"><span class="c">    </span>
+</span><span class="unused"><span class="c">--&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.height&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.margin.bottom&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.margin.inner&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.margin.outer&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.margin.top&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;page.width&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;paper.type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;geometry.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.marks&quot;</span> <span class="na">select=</span><span class="s">&quot;0&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.paper.type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.page.width&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.page.height&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.mode&quot;</span> <span class="na">select=</span><span class="s">&quot;&#39;cam&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered"><span class="k">&lt;xsl:param</span> <span class="na">name=</span><span class="s">&quot;crop.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;xsl:template</span> <span class="na">name=</span><span class="s">&quot;page.setup&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">
+</span><span class="covered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;geometry.setup&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">    <span class="nt">&lt;geometry</span> <span class="na">paperwidth=</span><span class="s">&quot;{$page.width}&quot;</span>
+</span><span class="covered">              <span class="na">paperheight=</span><span class="s">&quot;{$page.height}&quot;</span>
+</span><span class="covered">              <span class="na">papername=</span><span class="s">&quot;{$paper.type}&quot;</span>
+</span><span class="covered">              <span class="na">right=</span><span class="s">&quot;{$page.margin.outer}&quot;</span>
+</span><span class="covered">              <span class="na">left=</span><span class="s">&quot;{$page.margin.inner}&quot;</span>
+</span><span class="covered">              <span class="na">top=</span><span class="s">&quot;{$page.margin.top}&quot;</span>
+</span><span class="covered">              <span class="na">bottom=</span><span class="s">&quot;{$page.margin.bottom}&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="covered">  <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;geometry.params&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">    <span class="k">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">&quot;exsl:node-set($geometry.setup)//@*&quot;</span><span class="nt">&gt;</span>
+</span><span class="covered">      <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;. != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;local-name()&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>=<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;.&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>,<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="covered">      <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="covered">    <span class="k">&lt;/xsl:for-each&gt;</span>
+</span><span class="covered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$geometry.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="unused">  <span class="c">&lt;!-- The body includes the header and footer --&gt;</span>
+</span><span class="covered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$geometry.params != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\usepackage[includeheadfoot,<span class="k">&lt;/xsl:text&gt;</span> 
+</span><span class="uncovered">    <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$geometry.params&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>]{geometry}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span> 
+</span><span class="covered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="covered">  <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$crop.marks != 0&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">&quot;crop.params&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:choose</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$crop.paper.type != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.paper.type&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>,<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:when</span> <span class="na">test=</span><span class="s">&quot;$crop.page.width != &#39;&#39; and</span>
+</span><span class="uncovered"><span class="s">                      $crop.page.height != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="unused">        <span class="c">&lt;!-- No &#39;true&#39; length, assuming no scaling --&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>width=<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.page.width&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>,<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>height=<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.page.height&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>,<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:when&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:otherwise</span><span class="nt">&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;xsl:message</span><span class="nt">&gt;</span>
+</span><span class="uncovered">          <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>Warning: crop required without crop size setup<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">        <span class="k">&lt;/xsl:message&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:otherwise&gt;</span>
+</span><span class="unused">
+</span><span class="unused">      <span class="c">&lt;!-- FIXME: find out how to use crop.margin. The following fails:</span>
+</span><span class="unused"><span class="c">      &lt;xsl:otherwise&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;width=\pagewidth&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;+&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:value-of select=&quot;$crop.margin&quot;/&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;+&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:value-of select=&quot;$crop.margin&quot;/&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;,&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;height=\pageheight&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;+&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:value-of select=&quot;$crop.margin&quot;/&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;+&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:value-of select=&quot;$crop.margin&quot;/&gt;</span>
+</span><span class="unused"><span class="c">        &lt;xsl:text&gt;,&lt;/xsl:text&gt;</span>
+</span><span class="unused"><span class="c">      &lt;/xsl:otherwise&gt;</span>
+</span><span class="unused"><span class="c">      --&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;/xsl:choose&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.options&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">    <span class="k">&lt;/xsl:variable&gt;</span>
+</span><span class="unused">
+</span><span class="uncovered">    <span class="k">&lt;xsl:if</span> <span class="na">test=</span><span class="s">&quot;$crop.params != &#39;&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>\usepackage[<span class="k">&lt;/xsl:text&gt;</span> 
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.params&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>center,<span class="k">&lt;/xsl:text&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">&quot;$crop.mode&quot;</span><span class="nt">/&gt;</span>
+</span><span class="uncovered">      <span class="k">&lt;xsl:text</span><span class="nt">&gt;</span>]{crop}<span class="ni">&amp;#10;</span><span class="k">&lt;/xsl:text&gt;</span> 
+</span><span class="uncovered">    <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="covered">  <span class="k">&lt;/xsl:if&gt;</span>
+</span><span class="unused">
+</span><span class="covered"><span class="k">&lt;/xsl:template&gt;</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">&lt;!-- Unit-test cases:</span>
+</span><span class="unused"><span class="c">     dblatex -P paper.type=a5paper</span>
+</span><span class="unused"><span class="c">             -P page.margin.outer=1cm</span>
+</span><span class="unused"><span class="c">             -P page.margin.inner=3cm pagesetup.xml</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">     dblatex -P paper.type=a5paper</span>
+</span><span class="unused"><span class="c">             -P page.margin.outer=1cm</span>
+</span><span class="unused"><span class="c">             -P page.margin.inner=3cm</span>
+</span><span class="unused"><span class="c">             -P crop.marks=1</span>
+</span><span class="unused"><span class="c">             -P crop.paper.type=a4 pagesetup.xml</span>
+</span><span class="unused">
+</span><span class="unused"><span class="c">     dblatex -P page.width=18.89cm</span>
+</span><span class="unused"><span class="c">             -P page.height=24.58cm</span>
+</span><span class="unused"><span class="c">             -P page.margin.outer=1cm</span>
+</span><span class="unused"><span class="c">             -P page.margin.inner=3cm</span>
+</span><span class="unused"><span class="c">             -P crop.marks=1 </span>
+</span><span class="unused"><span class="c">             -P crop.page.width=21cm</span>
+</span><span class="unused"><span class="c">             -P crop.page.height=29.7cm pagesetup.xml</span>
+</span><span class="unused"><span class="c">--&gt;</span>
+</span><span class="unused"><span class="k">&lt;/xsl:stylesheet&gt;</span>
+</span></pre></div>
+</td></tr></table>    </body>
+    </html>
+    

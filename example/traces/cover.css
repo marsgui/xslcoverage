@@ -1,0 +1,69 @@
+/*
+ * XSL Coverage styles to handle the statistics table, and the popups
+ * of the covered code lines of the XSL stylesheets made pretty by Pygments
+ *
+ */
+/* Track by color covered and uncovered lines */
+span.uncovered { background-color: #F4FA58; }
+span.covered { background-color: #D0F5A9; }
+
+/* Sortable tables */
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
+}
+
+td.lcount { text-align: right; }
+td.percent { text-align: right; }
+
+/* List of the Popup texts to populate */
+.popup-list {
+    display: none;
+}
+
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    background-color: blue;
+}
+.popup:hover {
+    background-color: #81F7F3;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    background-color: #F5F6CE;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* to stick the popup to the left of the line:
+       'left: 0%; margin-left: 0px' */
+    left: 50%;
+    margin-left: -80px;
+    box-shadow: 2px 2px 6px 1px;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
