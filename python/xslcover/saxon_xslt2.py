@@ -1,4 +1,6 @@
-#!/usr/bin/env python
+#
+# XSL Coverage - See COPYRIGHT
+#
 import os
 import config
 from subprocess import Popen

@@ -1,3 +1,6 @@
+#
+# XSL Coverage - See COPYRIGHT
+#
 import os
 from subprocess import Popen
 from xslcover.runcover import cmdline_parser, cmdline_runargs
@@ -12,7 +15,7 @@ class TraceDblatex:
         cmd += args
         self.cmd = cmd
 
-        # Extend the dblatex config dir, to find the xslcover.conf file
+        # Extend the dblatex config dir, to find the xsltcover.conf file
         config_dir = os.environ.get("DBLATEX_CONFIG_FILES", "")
         if config_dir:
             pathsep = os.pathsep
@@ -23,7 +26,7 @@ class TraceDblatex:
         env.update(os.environ)
         env.update({"DBLATEX_CONFIG_FILES": config_dir})
 
-        # Specify the trace directory for saxon_xslt2
+        # Specify the trace directory used by saxon_xslt2
         if trace_dir:
             env.update({ "TRACE_DIRECTORY": trace_dir })
 
