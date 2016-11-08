@@ -748,6 +748,10 @@ def main():
     else:
         output_dir = ""
 
+    if len(tracelog.trace_files) == 0:
+        print >> sys.stderr, "Missing trace file to process"
+        parser.parse_args(["-h"])
+
     cover = CoverAnalyzer()
     cover.fromlog(tracelog)
     if options.show_stats:

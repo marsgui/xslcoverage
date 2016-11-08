@@ -2,6 +2,7 @@
 # XSL Coverage - See COPYRIGHT
 #
 import os
+import sys
 from subprocess import Popen
 from xslcover.runcover import cmdline_parser, cmdline_runargs
 
@@ -30,8 +31,12 @@ class TraceDblatex:
         if trace_dir:
             env.update({ "TRACE_DIRECTORY": trace_dir })
 
-        p = Popen(cmd, env=env)
-        rc = p.wait()
+        try:
+            p = Popen(cmd, env=env)
+            rc = p.wait()
+        except OSError, e:
+            print >> sys.stderr, "dblatex seems to be missing: %s" % (e)
+            rc = -1
         return rc
 
 def main():
