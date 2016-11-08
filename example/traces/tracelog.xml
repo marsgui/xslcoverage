@@ -1,9 +1,9 @@
 <trace-report>
-<command>dblatex -T xsltcover -o manual.pdf /home/ben/project/docbook/db2tex/dblatex/docs/manual.xml</command>
+<command>dblatex -T xsltcover -o foo.pdf /home/ben/project/docbook/db2tex/dblatex/docs/manual.xml</command>
 <trace-files>
-<file path="/tmp/xslc/traces/16312233053/trace-0002.xml"/>
-<file path="/tmp/xslc/traces/16312233053/trace-0001.xml"/>
-<file path="/tmp/xslc/traces/16312233053/trace-0003.xml"/>
+<file path="/tmp/xslc/traces/16313013713/trace-0002.xml"/>
+<file path="/tmp/xslc/traces/16313013713/trace-0001.xml"/>
+<file path="/tmp/xslc/traces/16313013713/trace-0003.xml"/>
 </trace-files>
 <stylesheets>
 <file path="/home/ben/project/docbook/db2tex/dblatex/xsl/common/mklistings.xsl" md5sum="1436e9d161dd2f1c72c36b9c562b7b2f"/>
