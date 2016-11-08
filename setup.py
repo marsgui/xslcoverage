@@ -26,7 +26,7 @@ from subprocess import Popen, PIPE
 #from contrib.debian.installer import DebianInstaller
 
 #
-# Build the command line script
+# Build the command line scripts
 #
 class BuildScripts(build_scripts):
 
@@ -116,7 +116,7 @@ class BuildScripts(build_scripts):
         if "/egg" in lib_path:
             lib_path = ""
             package_base = 'os.path.abspath(os.path.join(os.path.dirname('\
-                           '__file__), "..", "..", "share", "dblatex"))'
+                           '__file__), "..", "..", "share", "java"))'
         else:
             package_base = 'r"%s"' % (java_base)
 
