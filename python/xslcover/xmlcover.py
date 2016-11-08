@@ -418,6 +418,7 @@ class HtmlCoverageWriter:
         self.formatter = HtmlFormatterCoverage(linenos=True,
                           cssclass="source", cssfile=self.cssfile)
         self.formatter.encoding = "utf-8"
+        self.covering_full_path = False
         self.summary = []
         self.covering_files = []
         self.output_dir = ""
@@ -460,7 +461,10 @@ class HtmlCoverageWriter:
                 frags = covering_files.get(filename)
                 filepath, linenum = filename.split(":")
                 self._push_covering(filepath)
-                filepath = self._filename_html(filepath, "source")
+                # Use a relative path to the XML source
+                filepath =  "source/" + os.path.basename(filepath) + ".html"
+                if not(self.covering_full_path):
+                    filename = os.path.basename(filename)
                 p += '<a href="%s#line-%s">%s</a> (%s)\n' % \
                      (filepath, linenum, filename, ", ".join(frags))
             p += '</pre></span>'
