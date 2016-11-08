@@ -67,7 +67,7 @@ Once installed, several scripts are provided. What you can do:
    ...
    ```
 
-3. To compute the coverage from existing trace files, can xmlcover on the
+3. To compute the coverage from existing trace files, call xmlcover on the
    tracelog file built by runcover. It produces a bunch of HTML files of
    pretty printed XSL stylesheets with coverage information.
 
@@ -98,4 +98,11 @@ web browser to view it.
 * There is a link to each XSL file, that gives which lines are covered or not
 * For each line covered, clicking on them popup the list of the XML lines that
   originate the call of this XSL line.
+
+## Example
+See here an example of coverage:
+[coverage\_index.html](https://marsgui.github.io/xslcoverage/example/traces/coverage_index.html "Coverage Example")
+
+## Copyright
+See the COPYRIGHT in the package.
 
