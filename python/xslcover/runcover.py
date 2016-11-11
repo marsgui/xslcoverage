@@ -135,9 +135,9 @@ def cmdline_runargs(command, options, args):
                             snapshot=options.snapshot,
                             trace_dir=options.trace_dir)
 
-    runner.run(args)
+    rc = runner.run(args)
 
-    if options.report:
+    if rc == 0 and options.report:
         runner.build_coverage_report()
 
 def main():
