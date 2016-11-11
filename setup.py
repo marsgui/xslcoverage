@@ -177,6 +177,11 @@ class Build(build):
     def build_java(self):
         # Assumes that make is the GNU make
         cmd = ["make", "-C", "java"]
+
+        install = self.distribution.get_command_obj("install")
+        if install.saxon_path:
+            cmd.append("SAXON_JAR=%s" % \
+                       os.path.join(install.saxon_path, "saxon.jar"))
         subprocess.call(cmd)
 
 
