@@ -1,4 +1,7 @@
 # XSL Coverage
+
+[![PyPI version](https://badge.fury.io/py/xslcoverage.svg)](https://badge.fury.io/py/xslcoverage)
+
 This project contains some python scripts and a Saxon plugin to be able to
 compute the XSL Coverage of your XSL stylesheets. The coverage is given by HTML
 files showing the coverage rates, and for each XSL stylesheet involved, the
