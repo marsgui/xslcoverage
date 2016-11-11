@@ -28,7 +28,7 @@ class TraceSaxon:
         self.cmd = ["java", "-classpath", self.classpath,
            "-Dorg.apache.xerces.xni.parser.XMLParserConfiguration=org.apache.xerces.parsers.XIncludeParserConfiguration",
            "com.icl.saxon.StyleSheet",
-           "-TL", "dblatex.saxon.trace.TimedTraceListener",
+           "-TL", "xslcover.saxon.trace.TimedTraceListener",
            "-x", "org.apache.xml.resolver.tools.ResolvingXMLReader",
            "-y", "org.apache.xml.resolver.tools.ResolvingXMLReader",
            "-r", "org.apache.xml.resolver.tools.CatalogResolver"]

@@ -1,16 +1,18 @@
-package dblatex.saxon.trace;
+/*
+ * XSL Coverage - See COPYRIGHT
+ *
+ */
+package xslcover.saxon.trace;
 
 import java.io.PrintStream;
 import com.icl.saxon.om.NodeInfo;
 import com.icl.saxon.NodeHandler;
 import com.icl.saxon.Context;
 import com.icl.saxon.trace.TraceListener;
-//import com.icl.saxon.expr.XPathContext;
-//import com.icl.saxon.om.Item;
-//import com.icl.saxon.style.StandardNames;
 
 /**
- * A Simple trace listener that writes messages to System.err
+ * Trace listener that writes XSL coverage info to a TRACE_FILE or to 
+ * System.err otherwise
  */
 
 public class TimedTraceListener implements TraceListener {
@@ -32,7 +34,6 @@ public class TimedTraceListener implements TraceListener {
     /**
      * Called at start
      */
-
     public void open() {
         output_setup();
         current_source = null;
@@ -43,7 +44,6 @@ public class TimedTraceListener implements TraceListener {
     /**
      * Called at end
      */
-
     public void close() {
         out.println("<end time=\"" + System.currentTimeMillis()
                 + "\"/></trace>");
@@ -59,7 +59,6 @@ public class TimedTraceListener implements TraceListener {
      * Called when an instruction in the stylesheet gets processed
      */
     public void enter(NodeInfo instruction, Context context) {
-        //if (true) {
         if (instruction.getNodeType() == NodeInfo.ELEMENT) {
             String tag = "<stylesheet";
             String node = instruction.getLocalName();
@@ -100,7 +99,6 @@ public class TimedTraceListener implements TraceListener {
      * Called after an instruction of the stylesheet got processed
      */
     public void leave(NodeInfo instruction, Context context) {
-        //if (true) {
         if (instruction.getNodeType() == NodeInfo.ELEMENT) {
             String tag = "<end time=\"" + System.currentTimeMillis()
                     + "\"/>";
@@ -115,7 +113,6 @@ public class TimedTraceListener implements TraceListener {
     public void enterSource(NodeHandler handler,
                             Context context) {
         String tag = "";
-        //current_source = context.getCurrentNodeInfo();
         current_source = context.getContextNodeInfo();
         if (current_source != null) {
             String mode = getModeName(context);
