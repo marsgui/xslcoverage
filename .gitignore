@@ -1,5 +1,8 @@
 *.pyc
+*.jar
+*.sw*
 
+java/lib
 dist/
 build/
 *.egg-info
