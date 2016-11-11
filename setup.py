@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: ISO-8859-1 -*-
+# -*- coding: UTF-8 -*-
 #
 # xslcoverage python setup script - See the COPYRIGHT
 #
@@ -271,12 +271,11 @@ class InstallData(install_data):
 
 
 def get_version():
-    return "0.1"
     sys.path.insert(0, "python")
-    #from dbtexmf.dblatex import dblatex
-    #d = dblatex.DbLatex(base=os.getcwd())
+    import xslcover
+    version = xslcover.__version__
     sys.path.remove("python")
-    #return d.get_version()
+    return version
 
 
 if __name__ == "__main__":
