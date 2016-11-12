@@ -48,21 +48,43 @@ $ python setup.py install --prefix=/path/to/install
 ## How to produce the coverage data
 Once installed, several scripts are provided. What you can do:
 
-1. You can simply call saxon-xslt2, to replace the default saxon-xslt script.
-   It works like the original, except that it creates a trace file containing
-   the raw information of the XSL stylesheet line processed, and for which XML
-   source.
+### Using the raw Saxon XSLT wrapper
+You can simply call **saxon-xslt2**, to replace the default saxon-xslt
+script. It works like the original, except that it creates a trace file
+containing the raw information of the XSL stylesheet lines processed, and
+for which XML source.
 
-2. Instead, you can also call runcover to run XSLT on your stylesheet(s) and
-   output the trace file in a more consistent way. It calls the saxon-xslt2
-   wrapper of saxon, process the stylesheet(s) on your XML document, and it
-   outputs some trace files that can be processed on the fly to compute the
-   coverage, or that can be processed later. It produces a tracelog file
-   containing all the necessary data needed for post-processing by xmlcover.
+The limitation is that it requires some manual additional steps to exploit the
+traces later and compute the coverage.
+
+### Using xslcoverage
+The **xslcoverage** script is the main script to use. It contains two
+subcommands:
+
+`run [options] \<trace\_runner\> _runner__args_`
+:       It call the plugin named _trace\_runner_ in charge to perform some
+        XSLT processing (and maybe other things) and produce the trace files.
+
+`report [options]`
+:       It builds a coverage report in HTML format from trace files produced by
+        a `run`.
+
+The two subcommands can be combined but with care.
+
+### xslcoverage to build coverage traces
+Here are two examples:
+
+1. Call **xslcoverage** and subcommand `run saxon` to run the saxon wrapper
+   on your stylesheet(s) and output the trace file in a more consistent way.
+   It calls the saxon-xslt2 wrapper of saxon, process the stylesheet(s) on your
+   XML document, and it outputs some trace files that can be processed on the
+   fly to compute the coverage, or that can be processed later. It produces a
+   tracelog file containing all the necessary data needed for post-processing
+   by the subcommand `report`.
 
    ```
-   $ runcover --trace-dir=/path/to/traces [saxon options] \
-              file.xml stylesheet.xsl
+   $ xslcoverage --trace-dir=/path/to/traces \
+                 run saxon [saxon options] file.xml stylesheet.xsl
    ...
    Write traces to /path/to/traces/16312223507/trace-0001.xml
    ...
@@ -70,28 +92,95 @@ Once installed, several scripts are provided. What you can do:
    ...
    ```
 
-3. To compute the coverage from existing trace files, call xmlcover on the
-   tracelog file built by runcover. It produces a bunch of HTML files of
-   pretty printed XSL stylesheets with coverage information.
-
+2. The package provides as an example a more sophisticated plugin that runs
+   dblatex and produce coverage data. It works like the `saxon` plugin, except
+   that it configures and calls dblatex the right way.
    ```
-   $ xmlcover --from-log=/path/to/traces/16312223507/trace.log.xml \
-              --html-dir=/path/to/coverage-report
-   ...
-   /path/to/coverage-report/coverage_index.html
-   ```
-
-4. The package provides as an example a more sophisticated wrapper to call
-   dblatex and produce coverage data. It works like runcover, except that
-   it configures and calls dblatex the right way.
-   ```
-   $ dbcover --trace-dir=/path/to/traces --report [dblatex options] document.xml
+   $ xslcoverage --trace-dir=/path/to/traces \
+                 run dblatex [dblatex options] document.xml
    ...
    Write traces to /path/to/traces/16312563508/trace-0001.xml
    ...
    Write Trace log '/path/to/traces/16312563508/tracelog.xml'
    ...
-   /path/to/traces/16312563508/coverage_index.html
+   ```
+
+### xslcoverage to make a report from traces
+Here are some examples:
+
+3. To compute the coverage from existing trace files, call **xslcoverage**
+   with the subcommand `report` on
+   the tracelog file previously built by the `run` subcommand. It produces a
+   bunch of HTML files of pretty printed XSL stylesheets with coverage
+   information.
+   ```
+   $ xslcoverage report --from-log=/path/to/traces/16312223507/trace.log.xml \
+                        --html-dir=/path/to/coverage-report
+   ...
+   /path/to/coverage-report/coverage_index.html
+   ```
+
+4. To compute the coverage from existing trace files without a tracelog file,
+   you can simply specify the directory containing the trace files. The script
+   will look for any XML file contained in the directory. The limitation is that
+   it takes all the files, and does not discriminate from files produced by a
+   coverage session or by another. Nevertheless, it can be an alternative to
+   process trace files directly built by saxon-xslt2.
+   ```
+   $ xslcoverage --trace-dir=/path/to/traces/16312223507 \
+                 report --html-dir=/path/to/coverage-report
+   ...
+   /path/to/coverage-report/coverage_index.html
+   ```
+
+5. You can also give an explicit list of trace files to compute. Note in this
+   case that there is no more explicit directory where to output the HTML report
+   files (so use the --html-dir option).
+   ```
+   $ xslcoverage report --html-dir=/path/to/coverage-report \
+                        /path/to/traces/16312223507/trace-*.xml
+   ...
+   /path/to/coverage-report/coverage_index.html
+   ```
+
+### Making a report on the fly
+You can mix the `run` and `report` subcommands, but the report must be set
+first in the command line, because the run plugins pass all the next arguments
+to the underlying tools in charge to actually process and build the trace files.
+
+Note that when using `report` to build on the fly, some features are disabled
+because meaningless:
+* You cannot specify a tracelog file (it will the tracelog produced by the run)
+* You cannot pass explicit trace files in the arguments (they will be
+  interpreted as `run` parameters)
+
+Here are some examples:
+
+6. A basic report call mixed with a run. Without any options, the report is
+   outputed in the directory containing the traces.
+   ```
+   $ xslcoverage --trace-dir=/path/to/traces \
+                 report run saxon [saxon options] file.xml stylesheet.xsl
+   ...
+   Write traces to /path/to/traces/16312223507/trace-0001.xml
+   ...
+   Write Trace log '/path/to/traces/16312223507/tracelog.xml'
+   ...
+   /path/to/traces/16312223507/coverage_index.html
+   ```
+
+6. This report specifies the HTML directory, different from the trace
+   directory.
+   ```
+   $ xslcoverage --trace-dir=/path/to/traces \
+                 report --html-dir=/path/to/coverage-report \
+                 run saxon [saxon options] file.xml stylesheet.xsl
+   ...
+   Write traces to /path/to/traces/16312223507/trace-0001.xml
+   ...
+   Write Trace log '/path/to/traces/16312223507/tracelog.xml'
+   ...
+   /path/to/coverage-report/coverage_index.html
    ```
 
 ## How to use the coverage data
