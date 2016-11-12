@@ -4,14 +4,24 @@
 import os
 import sys
 from subprocess import Popen
-from xslcover.runcover import cmdline_parser, cmdline_runargs
+from argparse import ArgumentParser
 
 class TraceDblatex:
-    def __init__(self, dblatex="dblatex"):
-        self.dblatex = dblatex
+    def __init__(self):
+        self.dblatex = "dblatex"
         self.cmd = []
 
+    def _parse_args(self, args):
+        parser = ArgumentParser(description='Run dblatex with traces')
+        parser.add_argument("--script", help="Script to call",
+                            default="dblatex")
+        options, remain_args = parser.parse_known_args(args)
+        self.dblatex = options.script
+        return remain_args
+
     def run(self, args, trace_dir=""):
+        args = self._parse_args(args)
+
         cmd = [self.dblatex, "-T", "xsltcover"]
         cmd += args
         self.cmd = cmd
@@ -39,18 +49,8 @@ class TraceDblatex:
             rc = -1
         return rc
 
-def main():
-    from argparse import ArgumentParser
 
-    parser = ArgumentParser(description='Run dblatex with traces')
-    parser = cmdline_parser(parser=parser)
-    parser.add_argument("--dblatex", help="Script to call", default="dblatex")
-    options, remain_args = parser.parse_known_args()
-
-    command = TraceDblatex(options.dblatex)
-
-    cmdline_runargs(command, options, remain_args)
+class TraceRunner(TraceDblatex):
+    "Plugin Class to load"
 
 
-if __name__ == "__main__":
-    main()
