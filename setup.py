@@ -302,10 +302,10 @@ if __name__ == "__main__":
 
     setup(name="xslcoverage",
         version=get_version(),
-        description='XSL Coverage',
+        description='Scripts to compute the XSL Coverage done by an XSLT',
         author='Benoit Guillon',
         author_email='marsgui@users.sourceforge.net',
-        url='http://dblatex.sf.net',
+        url='https://marsgui.github.io/xslcoverage',
         license='GPL Version 2 or later',
         long_description=description,
         classifiers=classifiers,
