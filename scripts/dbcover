@@ -8,9 +8,10 @@ os.path.realpath(os.path.join(os.path.dirname(sys.argv[0]), ".."))
 sys.path.append(os.path.join(package_base, "python"))
 
 from xslcover import config
-from xslcover.dblatex import dbcover
+from xslcover import runcover
+from xslcover.runners.dblatex import TraceDblatex
 
 # Package configuration
 config.set_config(xslcover_path=os.path.join(package_base, "java"))
 
-dbcover.main()
+runcover.cmdline(TraceDblatex())

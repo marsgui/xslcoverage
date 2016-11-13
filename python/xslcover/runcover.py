@@ -9,14 +9,13 @@ from datetime import datetime
 from subprocess import Popen
 from argparse import ArgumentParser
 from xmlcover import CoverAnalyzer, TraceLog
-from saxon_xslt2 import TraceSaxon
 
 class CoverageRunner:
     def __init__(self, snapshot=True, trace_dir="", command=None,
                        write_report=False):
         self.command = command
-        self.trace_dir = trace_dir
-        self.snapshot = True
+        self.trace_dir = os.path.abspath(trace_dir)
+        self.snapshot = snapshot
         self.tracelog = None
         self.cover_report = None
         self.write_report = write_report
@@ -30,6 +29,13 @@ class CoverageRunner:
             self._old_files = []
         else:
             self._old_files = glob.glob(os.path.join(self.trace_dir, "*"))
+
+    def _remove_tracedir(self):
+        if not(self.snapshot):
+            return
+        _files = glob.glob(os.path.join(self.trace_dir, "*"))
+        if not(_files):
+            os.rmdir(self.trace_dir)
  
     def _write_tracelog(self):
         # Find out the files newly written
@@ -78,6 +84,7 @@ class CoverageRunner:
         self._prepare_tracedir()
         rc = self.command.run(args, trace_dir=self.trace_dir)
         if rc != 0:
+            self._remove_tracedir()
             return rc
 
         self._write_tracelog()
@@ -133,16 +140,16 @@ def cmdline_runargs(command, options, args):
 
     runner = CoverageRunner(command=command,
                             snapshot=options.snapshot,
-                            trace_dir=options.trace_dir)
+                            trace_dir=options.trace_dir,
+                            write_report=options.report)
 
     rc = runner.run(args)
+    return rc, runner
 
-    if rc == 0 and options.report:
-        runner.build_coverage_report()
 
 def main():
+    from runners.saxon import TraceSaxon
     cmdline(TraceSaxon())
-
 
 if __name__ == "__main__":
     main()

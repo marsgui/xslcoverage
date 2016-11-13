@@ -2,6 +2,7 @@
 # XSL Coverage - See COPYRIGHT
 #
 import os
+import sys
 import re
 import textwrap
 import shutil
@@ -702,8 +703,6 @@ class CoverAnalyzer:
     def _process_source(self, xmlnode):
         xmlfile = self.getxml(xmlnode.get("file").replace("file:",""))
         source = xmlfile.getline(xmlnode.get("line"))
-        #source.set_info(xmlnode.get("node"))
-        #print "source: ", source
         self._parse_children(xmlnode, source)
 
     def getxsl(self, filename):
@@ -713,22 +712,7 @@ class CoverAnalyzer:
         return self.xmlfiles.get_or_create(filename)
 
 
-def main():
-    import sys
-    import glob
-    from optparse import OptionParser
-    parser = OptionParser(usage="%s [options] [trace1...]" % sys.argv[0])
-    parser.add_option("-f", "--from-log",
-                      help="Trace report of the traces")
-    parser.add_option("-r", "--trace-dir",
-                      help="Directory containing the traces")
-    parser.add_option("-s", "--show-stats", action="store_true",
-                      help="Show coverage statistics on console")
-    parser.add_option("-O", "--html-dir",
-                      help="Directory containing the HTML output")
-
-    (options, args) = parser.parse_args()
-
+def cmdline_runargs(options, args, parser=None):
     tracelog = TraceLog()
     if options.from_log:
         tracelog.fromfile(options.from_log)
@@ -750,13 +734,32 @@ def main():
 
     if len(tracelog.trace_files) == 0:
         print >> sys.stderr, "Missing trace file to process"
-        parser.parse_args(["-h"])
+        if parser: parser.parse_args(["-h"])
+        else: return
 
     cover = CoverAnalyzer()
     cover.fromlog(tracelog)
     if options.show_stats:
         cover.print_stats()
     cover.write_html(output_dir=output_dir)
+ 
+
+def main():
+    import sys
+    import glob
+    from optparse import OptionParser
+    parser = OptionParser(usage="%s [options] [trace1...]" % sys.argv[0])
+    parser.add_option("-f", "--from-log",
+                      help="Trace report of the traces")
+    parser.add_option("-r", "--trace-dir",
+                      help="Directory containing the traces")
+    parser.add_option("-s", "--show-stats", action="store_true",
+                      help="Show coverage statistics on console")
+    parser.add_option("-O", "--html-dir",
+                      help="Directory containing the HTML output")
+
+    (options, args) = parser.parse_args()
+    cmdline_runargs(options, args)
 
 
 if __name__ == "__main__":
