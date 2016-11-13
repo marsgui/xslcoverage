@@ -95,7 +95,7 @@ class ReportCoverageCmd(BasicCmd):
     def setup_parser(self, parser):
         parser.add_argument("-f", "--from-log",
                             help="Trace report of the traces")
-        parser.add_argument("-s", "--show-stats", action="store_true",
+        parser.add_argument("--show-stats", action="store_true",
                             help="Show coverage statistics on console")
         parser.add_argument("-O", "--html-dir",
                             help="Directory containing the HTML output")

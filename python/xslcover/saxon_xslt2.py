@@ -3,20 +3,28 @@
 #
 import os
 import sys
-from runners.saxon import TraceSaxon
+from runners.saxon import TraceSaxon6
+from runners.saxon9he import TraceSaxon9he
 
-def main():
+def main(saxon_version="6"):
     from argparse import ArgumentParser
     parser = ArgumentParser(description='XSLT engine with traces')
     parser.add_argument("-D", "--trace-dir", default="",
           help="Directory containing the traces")
+    parser.add_argument("-V", "--saxon-version", default=saxon_version,
+          choices=["6", "6.5.5", "9", "9he"],
+          help="Version of Saxon to use")
 
     options, remain_args =  parser.parse_known_args()
 
     if not(options.trace_dir):
         options.trace_dir = os.environ.get("TRACE_DIRECTORY", "")
 
-    s = TraceSaxon()
+    if options.saxon_version.startswith("6"):
+        s = TraceSaxon6()
+    elif options.saxon_version.startswith("9"):
+        s = TraceSaxon9he()
+
     rc = s.run(remain_args, trace_dir=options.trace_dir)
     sys.exit(rc)
  

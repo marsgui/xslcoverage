@@ -1,8 +1,8 @@
 /*
  * XSL Coverage - See COPYRIGHT
- *
+ * Traces for Saxon 6.5.5
  */
-package xslcover.saxon.trace;
+package xslcover.icl.saxon.trace;
 
 import java.io.PrintStream;
 import com.icl.saxon.om.NodeInfo;
@@ -14,8 +14,7 @@ import com.icl.saxon.trace.TraceListener;
  * Trace listener that writes XSL coverage info to a TRACE_FILE or to 
  * System.err otherwise
  */
-
-public class TimedTraceListener implements TraceListener {
+public class XslcoverTraceListenerV65 implements TraceListener {
 
     private NodeInfo current_source;
     private PrintStream out = System.err;
