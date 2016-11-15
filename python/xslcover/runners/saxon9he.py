@@ -50,7 +50,8 @@ class TraceSaxon9he:
             print "Trace file set to %s" % trace_filename
             self.cmd.append("-traceout:%s" % trace_filename)
 
-        p = Popen(self.cmd + args)
+        self.cmd += args
+        p = Popen(self.cmd)
         rc = p.wait()
         return rc
 

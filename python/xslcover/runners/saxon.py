@@ -53,7 +53,8 @@ class TraceSaxon6:
         else:
             env = None
 
-        p = Popen(self.cmd + args, env=env)
+        self.cmd += args
+        p = Popen(self.cmd, env=env)
         rc = p.wait()
         return rc
 
