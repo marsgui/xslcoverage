@@ -12,7 +12,7 @@ covered lines, and what XML sources cover that line.
 The package depends on the following software:
 
 * Saxon: this is the core XSLT used t process the stylesheets. Currently it
-  works with Saxon 6.5.5.
+  works with Saxon 6.5.5, and Saxon-HE 9.7.x.
 * Xerces2: contains some java archives used to be able to process XML documents
   using XInclude
 * XML Resolver: java archive by Apache to resolve XML catalogs
@@ -194,6 +194,31 @@ web browser to view it.
 ## Example
 See here an example of coverage:
 [coverage\_index.html](https://marsgui.github.io/xslcoverage/example/traces/coverage_index.html "Coverage Example")
+
+## Tool Extensibility
+Currently **xslcoverage** only supports saxon, but you can define your own
+runner through a dedicated plugin that will be loaded by the tool.
+
+### Classes to Implement
+To provide your own coverage runner, create a python plugin containing a
+class named `TraceRunner` and optionnaly a class named `TraceParser`. The names
+must be respected in order be loadable by xslcoverage.  The role of the classes
+are:
+
+   * **TraceRunner** is in charge to run the XSLT engine and produce the
+     coverage traces.
+   * **TraceParser** is in charge to parse the traces produced by TraceRunner,
+     and to provide a coverage object. The coverage object must be derived from
+     the XmlCoverFile class to be exploited to build the coverage report.
+
+     If no TraceParser class is provided in the plugin, the default saxon parser
+     is used to parse the trace files, assuming that the trace file format is
+     the same.
+
+### Classes Interfaces
+The class must be compliant with the TraceRunnerBase and TraceParserBase
+abstract interface defined in coverapi.py 
+
 
 ## Copyright
 See the COPYRIGHT in the package.
