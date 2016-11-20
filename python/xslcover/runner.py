@@ -20,7 +20,16 @@ def load(modname, subdir=""):
             raise ValueError("Trace Runner '%s' not found" % modname)
     mod = imp.load_module(modname, file_, path, descr)
     if file_: file_.close()
+    return mod
+
+def load_runner(modname, subdir=""):
+    mod = load(modname, subdir=subdir)
     o = mod.TraceRunner()
+    return o
+
+def load_parser(modname, subdir=""):
+    mod = load(modname, subdir=subdir)
+    o = mod.TraceParser()
     return o
 
 def get_plugins(subdir=""):

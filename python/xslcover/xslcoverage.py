@@ -68,7 +68,7 @@ class RunCoverageCmd(BasicCmd):
     def run(self, parser, args):
         self._inherit_options(args)
         try:
-            command = runner.load(args.runner)
+            command = runner.load_runner(args.runner)
         except Exception, e:
             print e
             return

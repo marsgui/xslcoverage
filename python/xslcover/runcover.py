@@ -46,6 +46,7 @@ class CoverageRunner:
 
         tracelog = TraceLog()
         tracelog.set_command(" ".join(self.command.cmd))
+        tracelog.set_generator(self.command.trace_generator())
         for trace_file in trace_files:
             tracelog.add_trace(trace_file)
 

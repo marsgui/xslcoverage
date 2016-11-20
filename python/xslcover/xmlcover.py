@@ -8,6 +8,7 @@ import textwrap
 import shutil
 import glob
 import xml.etree.ElementTree as ET
+import runner
 from htmlreport import HtmlCoverageWriter
 from saxontrace import SaxonParser
 
@@ -24,9 +25,13 @@ class TraceLog:
         self.command = ""
         self.filename = ""
         self.root_tag = "trace-report"
+        self.trace_generator = ""
 
     def set_command(self, command):
         self.command = command
+
+    def set_generator(self, trace_generator):
+        self.trace_generator = trace_generator
 
     def add_trace(self, trace_file):
         self.trace_files.append(trace_file)
@@ -45,7 +50,10 @@ class TraceLog:
         f = open(tracelog, "w")
         f.write("<%s>\n" % self.root_tag)
         f.write("<command>%s</command>\n" % self.command)
-        f.write("<trace-files>\n")
+        f.write("<trace-files")
+        if self.trace_generator:
+            f.write(' trace-generator="%s"' % self.trace_generator)
+        f.write(">\n")
         for trace_file in self.trace_files:
             f.write('<file path="%s"/>\n' % os.path.abspath(trace_file))
         f.write("</trace-files>\n")
@@ -68,6 +76,7 @@ class TraceLog:
             self.set_command(node.text)
         node = root.find("trace-files")
         if not(node is None):
+            self.trace_generator = node.get("trace-generator") or ""
             for trace_file in node.findall("file"):
                 self.add_trace(trace_file.get("path"))
         node = root.find("stylesheets")
@@ -82,17 +91,28 @@ class TraceLog:
 
 class CoverAnalyzer:
     def __init__(self):
-        self.trace_parser = SaxonParser()
+        self.trace_parser_default = SaxonParser()
         self.html_writer = HtmlCoverageWriter()
         self.stats_done = False
         self.coverages = []
         self.tracelog = None
 
+    def get_parser(self, trace_generator):
+        parser = self.trace_parser_default
+        if not(trace_generator):
+            return parser
+        try:
+            parser = runner.load_parser(trace_generator)
+        except Exception, e:
+            print >> sys.stderr, "Cannot find parser: %s" % e
+        return parser
+
     def fromlog(self, tracelog):
         self.tracelog = tracelog
+        parser = self.get_parser(tracelog.trace_generator)
         for trace_file in tracelog.trace_files:
-            self.trace_parser.read_trace(trace_file)
-        self.coverages = self.trace_parser.get_coverages()
+            parser.read_trace(trace_file)
+        self.coverages = parser.get_coverages()
 
     def print_stats(self):
         for xcover in self.coverages:

@@ -2,8 +2,9 @@
 # XSL Coverage - See COPYRIGHT
 #
 import os
-from xslcover import config 
 from subprocess import Popen
+from xslcover import config 
+from xslcover.saxontrace import SaxonParser 
 
 def create_trace_filename(dirname, max_files=1000):
     filename_candidate = ""
@@ -13,9 +14,9 @@ def create_trace_filename(dirname, max_files=1000):
             break
     return filename_candidate
 
-class TraceSaxon9he:
+class Saxon9heRunner:
     """
-    Extend the default saxon script to have:
+    Extend the default saxon 9.x script to have:
     - Catalog resolver (xml-resolver required)
     - XInclude support (xercesImpl required)
     - Tracing of data to compute coverage (xslcover required)
@@ -41,6 +42,10 @@ class TraceSaxon9he:
            "-y:org.apache.xml.resolver.tools.ResolvingXMLReader",
            "-r:org.apache.xml.resolver.tools.CatalogResolver"]
 
+    def trace_generator(self):
+        name = os.path.splitext(os.path.basename(__file__))[0]
+        return name
+
     def run(self, args, trace_dir="", trace_filename=""):
         if not(trace_filename):
             trace_filename = create_trace_filename(trace_dir)
@@ -56,8 +61,9 @@ class TraceSaxon9he:
         return rc
 
 
-class TraceRunner(TraceSaxon9he):
+class TraceRunner(Saxon9heRunner):
     "Plugin Class to load"
 
-
+class TraceParser(SaxonParser):
+    "Plugin Class to load"
 
