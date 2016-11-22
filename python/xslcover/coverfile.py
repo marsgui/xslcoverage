@@ -1,4 +1,9 @@
+#
+# XSL Coverage - See COPYRIGHT
+#
 import re
+from coverapi import XmlCoverFileBase
+
 
 class XmlFilter:
     COMMENT_LINE = 1
@@ -81,7 +86,10 @@ class XmlFilter:
         return filtered_lines
 
 
-class XmlCoverFile:
+class XmlCoverFile(XmlCoverFileBase):
+    """
+    Core class containing the coverage data related to an XSL file
+    """
     def __init__(self, file_data):
         self.data = file_data
         self.xfilter = XmlFilter()

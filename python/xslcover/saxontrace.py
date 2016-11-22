@@ -5,6 +5,7 @@ import os
 import re
 import xml.etree.ElementTree as ET
 from coverfile import XmlCoverFile
+from coverapi import TraceParserBase
 
 
 class Position:
@@ -264,7 +265,7 @@ class FileManager:
         return _file
 
 
-class SaxonParser:
+class SaxonParser(TraceParserBase):
     """
     Parse the trace files produced by Saxon, and create the coverage files
     """

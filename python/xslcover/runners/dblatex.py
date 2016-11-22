@@ -5,8 +5,10 @@ import os
 import sys
 from subprocess import Popen
 from argparse import ArgumentParser
+from xslcover.coverapi import TraceRunnerBase
 
-class TraceDblatex:
+
+class TraceDblatex(TraceRunnerBase):
     def __init__(self):
         self.dblatex = "dblatex"
         self.cmd = []
@@ -18,6 +20,10 @@ class TraceDblatex:
         options, remain_args = parser.parse_known_args(args)
         self.dblatex = options.script
         return remain_args
+
+    def trace_generator(self):
+        # FIXME
+        return "saxon"
 
     def run(self, args, trace_dir=""):
         args = self._parse_args(args)

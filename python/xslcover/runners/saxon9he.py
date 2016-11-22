@@ -5,6 +5,7 @@ import os
 from subprocess import Popen
 from xslcover import config 
 from xslcover.saxontrace import SaxonParser 
+from xslcover.coverapi import TraceRunnerBase
 
 def create_trace_filename(dirname, max_files=1000):
     filename_candidate = ""
@@ -14,7 +15,7 @@ def create_trace_filename(dirname, max_files=1000):
             break
     return filename_candidate
 
-class Saxon9heRunner:
+class Saxon9heRunner(TraceRunnerBase):
     """
     Extend the default saxon 9.x script to have:
     - Catalog resolver (xml-resolver required)

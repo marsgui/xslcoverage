@@ -3,8 +3,8 @@
 #
 import os
 import sys
-from runners.saxon import TraceSaxon6
-from runners.saxon9he import TraceSaxon9he
+from runners.saxon import SaxonRunner
+from runners.saxon9he import Saxon9heRunner
 
 def main(saxon_version="6"):
     from argparse import ArgumentParser
@@ -21,9 +21,9 @@ def main(saxon_version="6"):
         options.trace_dir = os.environ.get("TRACE_DIRECTORY", "")
 
     if options.saxon_version.startswith("6"):
-        s = TraceSaxon6()
+        s = SaxonRunner()
     elif options.saxon_version.startswith("9"):
-        s = TraceSaxon9he()
+        s = Saxon9heRunner()
 
     rc = s.run(remain_args, trace_dir=options.trace_dir)
     sys.exit(rc)

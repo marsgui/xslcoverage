@@ -1,3 +1,4 @@
+import os
 from abc import ABCMeta, abstractmethod
 
 class TraceParserBase:
@@ -53,7 +54,7 @@ class TraceRunnerBase:
         pass
 
 
-class XmlCoverFile:
+class XmlCoverFileBase:
     """
     Object containing the coverage information about an XSL file used during
     the transformation process initiated by a TraceRunner
