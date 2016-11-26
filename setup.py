@@ -298,7 +298,8 @@ if __name__ == "__main__":
 
     htdocs = [os.path.basename(p) for p in 
               glob.glob(os.path.join("python", "xslcover", "htdocs", "*"))]
-    scripts = glob.glob(os.path.join("scripts", "*"))
+    #scripts = glob.glob(os.path.join("scripts", "*"))
+    jarfiles = glob.glob(os.path.join("java", "*.jar"))
 
     setup(name="xslcoverage",
         version=get_version(),
@@ -315,8 +316,8 @@ if __name__ == "__main__":
         package_dir={'xslcover':'python/xslcover'},
         package_data={'xslcover.runners': ['xsltcover.conf'],
                       'xslcover.htdocs': htdocs},
-        data_files=[('share/java', ['java/xslcover.jar'])],
-        scripts=scripts,
+        data_files=[('share/java', jarfiles)],
+        scripts=['scripts/xslcoverage', 'scripts/saxon-xslt2'],
         cmdclass={'build': Build,
                   'build_scripts': BuildScripts,
                   'install': Install,
