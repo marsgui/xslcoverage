@@ -160,6 +160,12 @@ class XmlCoverFile(XmlCoverFileBase):
                 files[source] = covered_frags
             yield (line.linenum, files)
 
+    def get_stats(self):
+        return dict(payload_covered=self.payload_covered,
+                    payload_total=self.payload_total,
+                    covered_linecount=self.covered_linecount,
+                    total_linecount=self.total_linecount)
+
     def print_stats(self):
         print "Coverage of %s: %d/%d (%d/%d)" % (self.data.filepath,
                self.payload_covered, self.payload_total,

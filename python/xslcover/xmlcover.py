@@ -115,8 +115,27 @@ class CoverAnalyzer:
         self.coverages = parser.get_coverages()
 
     def print_stats(self):
-        for xcover in self.coverages:
-            xcover.print_stats()
+        title = "%30s %10s %6s %10s %6s" % \
+                ("FILE", "PCOV / PTOT", "%PCOV", "LCOV / LTOT", "%LCOV")
+        pattern = "%(filename)30s "
+        pattern += "%(payload_covered)4d / %(payload_total)4d "
+        pattern += "%(payload_pct)6.2f "
+        pattern += "%(covered_linecount)4d / %(total_linecount)4d "
+        pattern += "%(linecount_pct)6.2f"
+        def sort_filename(o): return o.filepath()
+        def sort_coverage_pct(o):
+            return 100.*float(o.payload_covered)/o.payload_total
+        coverages = reversed(sorted(self.coverages, key=sort_coverage_pct))
+
+        print title
+        for xcover in coverages:
+            stats = xcover.get_stats()
+            pc, pt = stats.get("payload_covered"), stats.get("payload_total")
+            lc, lt = stats.get("covered_linecount"),stats.get("total_linecount")
+            stats["filename"] = os.path.basename(xcover.filepath())
+            stats["payload_pct"] = 100.*float(pc)/pt
+            stats["linecount_pct"] = 100.*float(lc)/lt
+            print pattern % stats
 
     def write_html(self, output_dir=""):
         self.html_writer.write(self.tracelog, self.coverages, output_dir)
