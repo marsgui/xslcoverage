@@ -1,0 +1,93 @@
+#!/usr/bin/env python
+
+from ghrelease import Releases
+
+class GithubCommands:
+    def __init__(self, user, password):
+        self.user = user
+        self.releases = Releases(user=user, password=password)
+
+    def create(self, parser, args):
+        args.name = args.name or args.tag_name
+        r = self.releases.create(dict(tag_name=args.tag_name,
+                                      name=args.name,
+                                      body=open(args.desc_file).read(),
+                                      draft=args.draft,
+                                      prerelease=args.prerelease),
+                                 repo=args.repo)
+
+    def upload(self, parser, args):
+        r = self.releases.tags(args.tag_name, repo=args.repo)
+        if r.has_asset(args.tarball):
+            print >> sys.stderr, "Asset '%s' already exists" % args.tarball
+            return
+        a = r.upload(args.tarball)
+
+    def delete(self, parser, args):
+        pass
+
+    def list(self, parser, args):
+        r = self.releases.tags(args.tag_name, repo=args.repo)
+                 #created_ad=str(r.created_at),
+        d = dict(tag_name=r.tag_name,
+                 name=r.name,
+                 id=r.id,
+                 html_url=r.html_url,
+                 login=r.author.login)
+
+        s = """
+        Tag name      : {tag_name}
+        Name          : {name}
+        Id            : {id}
+        URL           : {html_url}
+        Author        : {login}"""
+        print s.format(**d)
+        for (i, asset) in enumerate(r.assets):
+            self._print_asset(i, asset)
+
+    def _print_asset(self, i, asset):
+        s = """
+            Asset #{i} name    : {name}
+            Asset #{i} size    : {size}
+            Asset #{i} uploader: {login}
+            Asset #{i} dowloads: {download_count}"""
+        print s.format(i=i,
+                       name=asset.name,
+                       size=asset.size,
+                       login=asset.uploader.login,
+                       download_count=asset.download_count)
+
+
+if __name__ == "__main__":
+    import netrc
+
+    # Use netrc to store github account data
+    n = netrc.netrc()
+    user, account, password = n.authenticators('github')
+
+    ghr = GithubCommands(user, password)
+
+    from argparse import ArgumentParser
+    parser = ArgumentParser(description='This script computes XSL Coverage')
+    parser.add_argument("-u", "--user", help="GitHub user")
+    parser.add_argument("-r", "--repo", help="GitHub repository", required=True)
+
+    subparsers = parser.add_subparsers()
+    p = subparsers.add_parser("create", help="Create a Release")
+    p.add_argument("tag_name", help="Tag name of this release to create")
+    p.add_argument("-N", "--name", help="Name of the release to create")
+    p.add_argument("-i", "--desc-file", required=True,
+                   help="File containing the release description")
+    p.add_argument("-d", "--draft", action="store_true",
+                   help="Create a draft release")
+    p.add_argument("-p", "--prerelease", action="store_true",
+                   help="Create a pre-release")
+    p.set_defaults(run=ghr.create)
+
+    p = subparsers.add_parser("list", help="List a Release")
+    p.add_argument("tag_name", help="Tag name of the release to show")
+    p.set_defaults(run=ghr.list)
+
+    args = parser.parse_args() 
+    args.run(parser, args)
+

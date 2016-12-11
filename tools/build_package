@@ -1,0 +1,54 @@
+#!/bin/sh
+
+package=xslcoverage
+
+if [ $# -lt 1 ]; then
+  echo "$0 vX_Y_Z"
+  exit 1
+fi
+tag=$1
+
+# The actual release number is given from the tag: vX_Y_Z -> X.Y.Z
+version=`echo $tag|tr "_" "."|sed 's/^v//'`
+
+release=$package-$version
+
+echo "building version $version"
+
+tmpdir=`mktemp -d /tmp/$package.XXXX`
+if ! [ -d "$tmpdir" ]; then
+  echo "Cannot create temporary directory $tmpdir"
+  exit 1
+fi
+
+tmpbuild=$tmpdir/$release
+
+git archive --prefix=$release/ -o $tmpbuild.tar.gz $tag; rc=$?
+if [ $rc -ne 0 ]; then
+  echo "git archive failed"
+  echo "remove $tmpdir"
+  rm -rf $tmpdir
+  exit 1
+fi
+
+tar xvfz $tmpbuild.tar.gz -C $tmpdir
+
+# Make the package version file
+sed "s/devel/$version/" $tmpbuild/python/xslcover/__init__.py > \
+    $tmpbuild/python/xslcover/__init__.py2
+mv $tmpbuild/python/xslcover/__init__.py2 $tmpbuild/python/xslcover/__init__.py
+
+# Build the java archives
+make -C $tmpbuild/java
+
+# Remove the devel only files
+rm -f $tmpbuild/tools
+rm -f $tmpbuild/.gitignore
+
+# Cleanup compiled files
+find $tmpbuild -name "*.pyc" | xargs rm -f
+
+# Make the ball
+tar cvfj $release.tar.bz2 -C $tmpdir $release
+rm -rf $tmpdir
+
