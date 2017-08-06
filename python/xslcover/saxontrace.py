@@ -12,9 +12,10 @@ class Position:
     def __init__(self, bufpos, linepos):
         self.position(bufpos, linepos)
 
-    def position(self, bufpos, linepos):
+    def position(self, bufpos, linepos, linecnt=1):
         self.bufpos = bufpos
         self.linepos = linepos
+        self.linecnt = linecnt
 
 class ElementZone:
     def __init__(self, tag, parent=None):
@@ -89,13 +90,18 @@ class TreeLineBuilder:
 
         xmlns, tag = self._split_xmlns(tag)
 
-        m = re.search("<"+self.tag_pattern % tag, buf)
+        # Find the whole tag '<fulltag ...>' to know how many lines it uses
+        m = re.search("<"+self.tag_pattern % tag+"([\s/].*?)?>",
+                      buf, re.M|re.DOTALL)
         if not(m):
             print "%s => '%s'" % (tag, buf)
+        #else:
+        #    print "%s => '%s'" % (tag, m.group(0))
         fulltag = m.group(1)
+        linecnt = len(m.group(0).split("\n"))
         abs_pos, abs_line = self._abs_from(m.start())
         e = self._new_element(fulltag)
-        e.start.position(abs_pos, abs_line)
+        e.start.position(abs_pos, abs_line, linecnt)
         self._set_starting_line(e)
         self.datapos.position(abs_pos, abs_line)
         self.depth += 1
@@ -145,20 +151,50 @@ class SaxonCoverFile(XmlCoverFile):
         # If the last line of an empty tag like this is covered then all the
         # lines of the tag are covered:
         #
-        #   <tag foo="bar"
+        #   <tag foo="bar"       <-- covered
         #        other="baz"
         #        read="write"/>
         #
         if self.line_status(linenum) != "covered":
             return False
 
+        fixed = False
         for e in elements.ending:
             if (e.empty and e.start.linepos < e.end.linepos):
                 for i in range(e.start.linepos, e.end.linepos):
                     if self.line_status(i) != "covered":
                         line_st = self.xslfile.getline(i)
                         line_st.cover_fragment("empty filled", None)
-        return True
+                        fixed = True
+        return fixed
+
+    def _fix_multiline_start_tag(self, linenum, elements):
+        # FIXME!
+        # If the last line of a start tag like this is covered then all the
+        # lines of the tag are covered:
+        #
+        #   <tag foo="bar"
+        #        other="baz"
+        #        read="write">   <-- covered
+        #
+        if self.line_status(linenum) == "covered":
+            return False
+
+        fixed = False
+        for e in elements.starting:
+            if (not(e.empty) and e.start.linecnt > 1):
+                last_tag_line = e.start.linepos + e.start.linecnt - 1
+                print "%s:%s %d -> %d" % (self.xslfile.filepath,
+                                                    e.tag, e.start.linepos,
+                                                 last_tag_line)
+                if self.line_status(last_tag_line) == "covered":
+                    for i in range(e.start.linepos, last_tag_line):
+                        print "  %d: %s" % (i, self.line_status(i))
+                        if self.line_status(i) != "covered":
+                            line_st = self.xslfile.getline(i)
+                            line_st.cover_fragment("start filled", None)
+                            fixed = True
+        return fixed
 
     def _fix_closing_tag(self, linenum, elements):
         # If an opening tag is covered, then the closing tag is covered too
@@ -201,8 +237,11 @@ class SaxonCoverFile(XmlCoverFile):
                     continue
                 if self._fix_closing_tag(linenum, elements):
                     continue
-            elif self._fix_withparam_tag(linenum, elements):
-                continue
+            else:
+                if self._fix_multiline_start_tag(linenum, elements):
+                    continue
+                if self._fix_withparam_tag(linenum, elements):
+                    continue
 
 
 class Line:
