@@ -118,6 +118,9 @@ class HtmlCoverageWriter:
             for filename in filenames:
                 frags = covering_files.get(filename)
                 filepath, linenum = filename.split(":")
+                # FIXME: removed temporary files have their path "lost"
+                if not(filepath):
+                    continue
                 self._push_covering(filepath)
                 # Use a relative path to the XML source
                 filepath =  "source/" + os.path.basename(filepath) + ".html"
