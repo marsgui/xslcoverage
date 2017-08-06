@@ -11,6 +11,7 @@ from xslcover.coverapi import TraceRunnerBase
 class TraceDblatex(TraceRunnerBase):
     def __init__(self):
         self.dblatex = "dblatex"
+        self.config_dir = os.path.abspath(os.path.dirname(__file__))
         self.cmd = []
 
     def _parse_args(self, args):
@@ -28,20 +29,14 @@ class TraceDblatex(TraceRunnerBase):
     def run(self, args, trace_dir=""):
         args = self._parse_args(args)
 
-        cmd = [self.dblatex, "-T", "xsltcover"]
+        # Prepend the arguments to use xsltcover.conf (need dblatex >= 0.3.10)
+        cmd = [self.dblatex, "-c",
+               os.path.join(self.config_dir, "xsltcover.conf")]
         cmd += args
         self.cmd = cmd
 
-        # Extend the dblatex config dir, to find the xsltcover.conf file
-        config_dir = os.environ.get("DBLATEX_CONFIG_FILES", "")
-        if config_dir:
-            pathsep = os.pathsep
-        else:
-            pathsep = ""
-        config_dir += pathsep + os.path.abspath(os.path.dirname(__file__))
         env = {}
         env.update(os.environ)
-        env.update({"DBLATEX_CONFIG_FILES": config_dir})
 
         # Specify the trace directory used by saxon_xslt2
         if trace_dir:
