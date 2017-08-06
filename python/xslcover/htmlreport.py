@@ -1,4 +1,5 @@
 import os
+import re
 import glob
 import shutil
 import textwrap
@@ -78,6 +79,14 @@ class HtmlCoverageWriter:
         outname = os.path.join(self.output_dir, subdir, filename + ".html")
         return outname
 
+    def _xml_encoding(self, data):
+        # The XML declaration is the very first line  
+        m = re.match("<\?xml.*encoding=['\"](.*?)['\"].*\?>", data)
+        if m:
+            return m.group(1)
+        else:
+            return "utf-8"
+
     def write_covering(self):
         html_dir = os.path.join(self.output_dir, "source")
         if not(os.path.exists(html_dir)):
@@ -91,7 +100,10 @@ class HtmlCoverageWriter:
                                       lineanchors="line",
                                       full=True,
                                       title=os.path.basename(filename))
+            # The generated HTML encoding
             formatter.encoding = "utf-8"
+            # The input XML encoding to parse
+            self.lexer.encoding = self._xml_encoding(code)
             outname = self._filename_html(filename, "source")
             outfile = open(outname, "w")
             highlight(code, self.lexer, formatter, outfile)
