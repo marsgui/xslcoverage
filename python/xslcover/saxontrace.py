@@ -184,12 +184,8 @@ class SaxonCoverFile(XmlCoverFile):
         for e in elements.starting:
             if (not(e.empty) and e.start.linecnt > 1):
                 last_tag_line = e.start.linepos + e.start.linecnt - 1
-                print "%s:%s %d -> %d" % (self.xslfile.filepath,
-                                                    e.tag, e.start.linepos,
-                                                 last_tag_line)
                 if self.line_status(last_tag_line) == "covered":
                     for i in range(e.start.linepos, last_tag_line):
-                        print "  %d: %s" % (i, self.line_status(i))
                         if self.line_status(i) != "covered":
                             line_st = self.xslfile.getline(i)
                             line_st.cover_fragment("start filled", None)
